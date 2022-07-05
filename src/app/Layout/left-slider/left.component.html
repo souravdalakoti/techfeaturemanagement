@@ -1,0 +1,23 @@
+<div class="left-slider">
+					 	
+    <ul *ngFor="let header of HeaderMenu;index as i">
+        <span >{{header.name}}</span>
+        <!-- <li *ngIf="Condition()" ><p></p></li> -->
+        <li class="Employees"   *ngFor="let slide of SideBarMenu | Title:header.HeaderId"  >
+
+            <div (click)="slide.IsShow=!slide.IsShow"><img src="../../../assets/images/edit.png" >{{slide.name}} <img *ngIf="slide.IsSubmenu" src="../../../assets/images//icon2.png" [style.transform]="slide.IsShow?'rotate(90deg)':''"  class="dropdown" ></div>
+           <span *ngIf="slide.IsSubmenu">
+            <ul  [style.display]="slide.IsShow?'none':'block'" class="Employees-popup">
+                <li  *ngFor="let sub of subMenu | Title:slide.SideBarMenu:slide.IsShow" style="padding-left: 50px">
+                    <a [routerLink]="sub.path" >{{sub.name}}</a>
+                </li>
+           </ul>
+        </span>
+        </li>
+                
+
+        
+      
+    </ul>
+
+</div>

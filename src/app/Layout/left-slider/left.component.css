@@ -1,0 +1,23 @@
+*{margin: 0;padding: 0;}
+
+.left-slider{    position: fixed;
+    top: 60px;
+    background: #34444c;
+    height: 100vh;
+    width: 250px;
+    left:0px;
+    overflow: auto;
+}
+
+.left-slider ul{padding: 20px 0}
+.left-slider ul li{    padding: 8px 20px;
+            font-size: 18px;
+            font-weight: 600;color: white;
+            
+        }
+.left-slider img{height: 15px;padding-right: 10px}
+
+.Employees{display: block;justify-content: space-between;}
+.Employees-popup {background: #0003;    transition: all .2s ease-in-out 0s}
+.Employees-li {padding-left: 50px}
+

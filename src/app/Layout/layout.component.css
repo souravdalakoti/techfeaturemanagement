@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+header{
+    height: 60px;
+    background: linear-gradient(to right,#ff9b44 0%,#fc6075 100%);  
+     display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;position: fixed;top: 0;right: 0;left: 0;
+    z-index: 1;
+}
+

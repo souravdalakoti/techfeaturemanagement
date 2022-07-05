@@ -1,0 +1,27 @@
+<div class="right-nav">
+    <ul class="right-nav-ul">
+        <li class="before"><img src="../../../assets/images//img2.png"></li>
+        <li class="before"><img src="../../../assets/images//img4.png"></li>
+
+        <li (click)="view=!view" class="profile">
+            <img src="../../../assets/images/img3.png" >
+            <p class="show" >Admin</p>
+            <img src="../../../assets/images//icon1.png" style="height: 15px">
+            <ul [style.Display]="view?'none':'block'" class="profile-popup">
+                <li>my profile</li>
+                <li>setting</li>
+                <li><a routerLink="/Auth">Logout</a></li>
+            </ul>
+        
+
+        </li>
+    </ul>
+
+
+    <div class="dropdown">
+        <div class="dropdown-menu">
+            <a class="dropdown-item"></a>
+            <a class="dropdown-item"></a>
+            <a class="dropdown-item"></a>
+        </div>
+    </div>
