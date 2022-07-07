@@ -34,8 +34,8 @@
 <!-- ----------------------------------------------------------------------------------------------------------- -->
         <div class="content-body">
             <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
+                <a routerLink="/EmployeeDetail"><img src="../../../../assets/images/img3.png">
+                <p class="f-20">Catherine Manseau</p></a>
                 <p class="c-gray">Web Developer</p>
                 <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
                 <ul [style.Display]="show?'none':'block'" class="div-ul active">
@@ -235,3 +235,4 @@
             
         </div>
 </div>
+<router-outlet></router-outlet>
