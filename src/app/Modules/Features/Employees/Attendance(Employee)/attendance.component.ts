@@ -3,10 +3,12 @@ import { Component } from "@angular/core";
 @Component({
 selector:'app-attendance',
 templateUrl:'./attendance.component.html',
-// styleUrls:['./admin.component.css']
+styleUrls:['./attendance.component.css']
 })
 
 export class AttendanceComponent{
-
+ view:boolean=true;
+ show:boolean=true;
     constructor(){}
 }
+

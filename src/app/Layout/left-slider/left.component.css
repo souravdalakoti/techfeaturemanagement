@@ -1,5 +1,7 @@
 *{margin: 0;padding: 0;}
 
+body{margin: 0;}
+
 .left-slider{    position: fixed;
     top: 60px;
     background: #34444c;

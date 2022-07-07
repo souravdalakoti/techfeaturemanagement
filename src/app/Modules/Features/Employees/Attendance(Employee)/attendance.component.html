@@ -1,5 +1,221 @@
 
+        <div class="main">
+                    <div class="main-header">
+                        <h1>Employee</h1>
+                        <p>Dashboard / Employee</p>
+                    </div>
 
-    <h1 style="font-size: 170px;color: brown;">EMPLOYEE ATTENDANCE</h1>
+
+                    <div class="row">
+                        <div class="col">
+                            
+                            <h2 class="card-title">Timesheet<span class="clr-grey"> 11 March 2019</span></h2>
+                            <div class="punch-det">
+                                <h5>Punch In at</h5>
+                                <p>Wed, 11th Mar 2019 10.00 AM</p>
+                            </div>
+
+                            <div class="punch-hour"><span>3.45 hrs</span></div>
+                            <button class="btn">Punch Out</button>
+                            <div class="d-flex spc-btw">
+                                <div class="stats-box">
+                                    <p>Break</p>
+                                    <h4>1.21 hrs</h4>
+                                </div>
+                                <div class="stats-box">
+                                    <p>Break</p>
+                                    <h4>1.21 hrs</h4>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h2>Statistics</h2>
+                            <div class="punch-det">
+                                <p class="d-flex spc-btw">
+                                    Today <strong>3.45 / <small>hrs</small></strong>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bar1"></div>
+                                </div>
+
+                            </div>
+                            <div class="punch-det">
+                                <p class="d-flex spc-btw">
+                                    Today <strong>3.45 / <small>hrs</small></strong>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bar2"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="punch-det">
+                                <p class="d-flex spc-btw">
+                                    Today <strong>3.45 / <small>hrs</small></strong>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bar3"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="punch-det">
+                                <p class="d-flex spc-btw">
+                                    Today <strong>3.45 / <small>hrs</small></strong>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bar4"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="punch-det">
+                                <p class="d-flex spc-btw">
+                                    Today <strong>3.45 / <small>hrs</small></strong>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bar5"></div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <h2>Today Activity</h2>
+                            <ul class="Activity-list">
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+                                <li>
+                                    <p>Punch In at</p>
+                                    <p class="d-flex">
+                                        <img src="../../../../assets/images/clock.png"> 
+                                        10.00 AM.
+                                     </p>
+                                </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                        
+            <div class="filter-row">
+                    <div>
+                        <input type="text" name=""placeholder="Name">
+                    </div>
+                    <div (click)="view=!view" class="child3">
+                        <p>select Month</p>	
+                        <p>-</p>
+                        <img src="../../../../assets/images/icon1.png"	>
+
+                        <ul  [style.Display]="view?'none':'block'" class="month-ul">
+                            <li>jan</li>
+                            <li>feb</li>
+                            <li>mar</li>
+                            <li>apr</li>
+                            <li>may</li>
+                            <li>jun</li>
+                            <li>jul</li>
+                            <li>aug</li>
+                            <li>sep</li>
+                            <li>oct</li>
+                            <li>nov</li>
+                            <li>dec</li>
+
+                        </ul>
+                    </div>
+                    <div (click)="show=!show" class="child2">
+                        <p>select Year</p>	
+                        <p>-</p>
+                        
+                        <img src="../../../../assets/images/icon1.png"	>
+                        <ul [style.Display]="show?'none':'block'" class="Year-ul">
+                            <li>-</li>
+                            <li>2019</li>
+                            <li>2018</li>
+                            <li>2017</li>
+                            <li>2016</li>
+                            <li>2016</li>
+                            <li>2014</li>
+                        </ul>
+
+                    </div>
+                    <div>search	</div>
+            </div>
+                    
+        <table  class="custom-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Punch in</th>
+                    <th>punch out</th>
+                    <th>Production</th>
+                    <th>Break</th>
+                    <th>Overtime</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>19 Feb 2019</td>
+                    <td>10 AM</td>
+                    <td>7 PM</td>
+                    <td>9 rs</td>
+                    <td> hrs</td>
+                    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>20 Feb 2019</td>
+                    <td>10 AM</td>
+                    <td>7 PM</td>
+                    <td>9 rs</td>
+                    <td> hrs</td>
+                    <td>0</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+    
+   
 
 
