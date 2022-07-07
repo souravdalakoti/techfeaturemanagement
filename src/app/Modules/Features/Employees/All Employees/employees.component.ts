@@ -7,6 +7,7 @@ styleUrls:['./employees.component.css']
 })
 
 export class EmployeesComponent{
-
+    veiw:boolean=true;
+    show:boolean=true;
     constructor(){}
 }
