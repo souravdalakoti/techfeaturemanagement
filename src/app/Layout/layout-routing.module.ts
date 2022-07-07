@@ -19,10 +19,10 @@ const routes: Routes = [
     }] 
 },
 {
-  path: '', component: AuthComponent,
+  path: 'Auth', component: AuthComponent,
   children: [
     {
-      path: 'Auth',
+      path: '',
       loadChildren: () => import('../Modules/Auth/auth.module').then(module => module.AuthModule)
     }] 
 },
