@@ -51,7 +51,7 @@ export class LeftComponent{
   constructor(){}
 
   ngOnInit(){
-    debugger
+    
     for(var i=0;i<this.SideBarMenu.length;i++)
     {
      

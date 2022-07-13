@@ -107,3 +107,10 @@ ul li{list-style: none;}
 					transform-origin: left top 0;
 					box-shadow: inherit;
 					background-color: #fff}
+					.form-control{    width: 270px;
+						height: 40px;
+						margin: 10px 0;    background-color: #fbfbfb;
+						border: 1px solid #e3e3e3;
+						border-radius: 4px
+				}
+	
