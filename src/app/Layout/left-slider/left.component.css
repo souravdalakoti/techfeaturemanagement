@@ -8,7 +8,7 @@ body{margin: 0;}
     height: 100vh;
     width: 250px;
     left:0px;
-    overflow: auto;
+    overflow: auto;z-index: 99;
 }
 
 .left-slider ul{padding: 20px 0}
@@ -23,3 +23,18 @@ body{margin: 0;}
 .Employees-popup {background: #0003;    transition: all .2s ease-in-out 0s}
 .Employees-li {padding-left: 50px}
 
+.material-icons{    position: fixed;
+    left: 15px;display: none;
+    top: 20px;
+    color: white;
+    font-size: 25px; z-index: 99;}
+
+    
+    #check:checked~.left-slider{left: 0px;}
+
+@media(max-width:540px){
+   .left-slider{left: -250px;}
+    .material-icons{display: block;} 
+   
+    
+}

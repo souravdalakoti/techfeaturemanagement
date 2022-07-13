@@ -7,7 +7,7 @@ a{text-decoration: none;}
 
 		
         .right-nav-ul{	display: flex;}
-		.right-nav-ul li{padding: 0 30px;position: relative;}
+		.right-nav-ul li{padding: 0 15px;position: relative;}
 		.right-nav-ul li img{height: 30px}
 
 		.before:before{    content: "4";
@@ -15,8 +15,8 @@ a{text-decoration: none;}
 					    background: #a52424;
 					    height: 20px;
 					    width: 20px;
-					    right: 22px;
-					    top: -8px;
+					    right: 10px;
+					    top: -4px;
 					    border-radius: 100%;    color: white;
 					    text-align: center;
 					    font-size: 18px;
@@ -34,11 +34,32 @@ a{text-decoration: none;}
 						    width: 10px;
 						    border-radius: 100%;
 						    bottom: 0;
-						    right: 117px
+						    right: 105px
 								}
 
-								.active{    position: absolute;display: block;
-										    top: 45px;color: black;
-										    background: lightblue}
+.active{    position: absolute;display: block;
+top: 45px;color: black;right: 50px;
+background: lightblue}
+
+.dots{height: 20px;
+	position: absolute;
+	top: 20px;
+	filter: opacity(0.5);
+	right: 10px;display: none;}
+
+		
+
+		
+@media (max-width: 991px){
+    .show{display: none;}
+	.profile:before{right: 25px}
+	.arrw{display: none;}
+}
+
+@media(max-width:540px){ 
+	.right-nav-ul{display: none;}
+	.dots{display: block;}
+	.active{right: 10px;}
+}
 
 		

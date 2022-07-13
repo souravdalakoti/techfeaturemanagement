@@ -4,13 +4,13 @@ ul li{list-style: none;}
 .c-gray{color: #8e8e8e;font-size: 15px}
 .f-18{font-size: 18px}
 
-.main{padding: 30px}
+.main{padding: 20px}
 .main-header{display: flex;justify-content: space-between;margin-bottom: 30px;align-items: center;}
 .main-header button{    background-color: #ff9b44;
 						border: 1px solid #ff9b44;
 						border-radius: 50px;
 						color: #fff;
-						float: right;
+						
 						 font-weight: 600;font-size: 16px;
 						min-width: 170px;height: 45px}
 
@@ -22,7 +22,7 @@ ul li{list-style: none;}
 .main-header p{font-size: 20px}
 
 
-.content-head{display: flex;justify-content: space-between;}
+.content-head{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
 .content-head div{
 
@@ -34,20 +34,21 @@ ul li{list-style: none;}
 		width: 23%;
 }
 
-.content-head div input   { height: 100%;
-				
-				font-size: 16px;
-				padding-left: 10px;border: 0}
+.content-head div input   { height: 100%;    box-sizing: border-box;
+								width: 100%;
+									
+									font-size: 16px;
+									padding-left: 10px;border: 0}
 
 .content-head div:nth-child(4){    background-color: #55ce63; border: 1px solid #55ce63;
 						font-size: 27px;
-						color: white;
+						color: white;    height: 100%;
 						padding: 10px;
 						box-sizing: border-box;
 						text-align: center}
 
 
-.content-head div:nth-child(3){    padding: 5px;  box-sizing: border-box;position: relative;}
+.content-head div:nth-child(3){    padding: 5px;    height: 100%;  box-sizing: border-box;position: relative;}
 .content-head div:nth-child(3) img{    height: 10px;
 									position: absolute;
 									right: 10px;
@@ -107,3 +108,23 @@ ul li{list-style: none;}
 					transform-origin: left top 0;
 					box-shadow: inherit;
 					background-color: #fff}
+
+@media(max-width:992px){
+	.content-head div{width: 48%;margin-bottom: 10px;}
+	.content-head div:nth-child(4){width: 49%;}
+	.content-head div:nth-child(3){width: 49%;}
+	.content-body{grid-template-columns: repeat(3 , 1fr)}
+}
+
+@media(max-width:768px){.content-body{grid-template-columns: repeat(2 , 1fr)}}
+
+@media(max-width:590px){
+	.content-head div{width: 100%}
+	.content-head div:nth-child(4){width: 100%;}
+	.content-head div:nth-child(3){width: 100%;}
+	.content-body{grid-template-columns: repeat(1 , 1fr)}
+
+	.main-header{display: block;text-align: center;}
+	.main-header p{display: none;}
+
+}

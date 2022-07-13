@@ -5,7 +5,21 @@ header{
      display: flex;
     justify-content: space-between;
     padding: 0 30px;
-    align-items: center;position: sticky;top: 0;right: 0;left: 0;
+    align-items: center;position: fixed;top: 0;right: 0;left: 0;
     z-index: 99;
 }
+
+
+
+    #check:checked~.left-slider{display: block;}
+
+    @media(max-width:540px){
+
+        .material-icons{display: block;}
+        header{justify-content: center;z-index: 33;}
+
+
+
+    }
+
 

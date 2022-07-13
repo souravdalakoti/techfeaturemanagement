@@ -6,17 +6,22 @@
         <li (click)="view=!view" class="profile">
             <img src="../../../assets/images/img3.png" >
             <p class="show" >Admin</p>
-            <img src="../../../assets/images//icon1.png" style="height: 15px">
-            <ul [style.Display]="view?'none':'block'" class="active">
+            <img src="../../../assets/images//icon1.png" style="height: 15px" class="arrw">
+            <!-- <ul [style.Display]="view?'none':'block'" class="active">
                 <li>my profile</li>
                 <li>setting</li>
                 <li><a routerLink="Auth/Login">Logout</a></li>
-            </ul>
+            </ul> -->
         
 
         </li>
     </ul>
-
+    <ul [style.Display]="view?'none':'block'" class="active">
+        <li>my profile</li>
+        <li>setting</li>
+        <li><a routerLink="Auth/Login">Logout</a></li>
+    </ul>
+    <img src="../../../../assets/images/dots.png" (click)="view=!view" class="dots" >
 
     <div class="dropdown">
         <div class="dropdown-menu">
