@@ -12,28 +12,60 @@
         <div class="info-input">
                 <div>
 
-                    <span>Employee Name</span> <input type="" name="" class="form-control">
-                    <span>Age </span><input type="" name="" class="form-control">
-                    <span>Gender</span> <input type="" name="" class="form-control">
-                    <span>Phone no</span><input type="" name="" class="form-control">
-                    <span>Date of Joining</span><input type="" name="" class="form-control">
+                    <span>Employee Name</span> <input type=""  [(ngModel)]="emp_name" class="form-control">
+                    <span>Age </span><input type="" [(ngModel)]="age"  class="form-control">
+                    <span>Gender</span> <select value='select' [(ngModel)]="gender" class="form-control" >
+                        <option disabled value="" selected><b>select</b></option>
+                        <option value="MALE">MALE</option>
+                        <option value="FEMALE">FEMALE</option>
+                    </select>
+                    <span>Phone no</span><input type=""  [(ngModel)]="phone_no" class="form-control">
+                    <span>Password</span> <input type=""  [(ngModel)]="password" class="form-control">
+                    <span>Confirm Password</span><input type=""  [(ngModel)]="confirm_password" class="form-control">
+                   
                 </div>
                 <div>
 
-                    <span>Designation</span> <input type="" name="" class="form-control">
-                    <span>Role</span><input type="" name="" class="form-control"> 
-                    <span>Email ID</span><input type="" name="" class="form-control">
-                    <span>Password</span> <input type="" name="" class="form-control">
-                    <span>Confirm Password</span><input type="" name="" class="form-control">
+                    <span>Department</span><select value='select' [(ngModel)]="department_id" class="form-control" >
+                        <option value=0 disabled selected><b>select</b></option>
+                        <option  *ngFor="let item of department;index as i" [value]="item.id">{{item.department_name}}</option>
+                        </select>
+                    <span>Designation</span><select value='select' [(ngModel)]="designation_id"  class="form-control" >
+                        <option  value=0 disabled selected><b>select</b></option>
+                      <option *ngFor="let item of designation;index as i" [value]="item.id">{{item.designation_name}}</option>
+                    </select>
+                    <span> Position</span><select value='select' [(ngModel)]="position_id" class="form-control" >
+                        <option value=0 disabled selected><b>select</b></option>
+                       <option  *ngFor="let item of position;index as i" [value]="item.id">{{item.position_name}}</option>
+                    </select>
+                  <span>Email ID</span><input type=""  [(ngModel)]="email" class="form-control">
+                  <span>Date of Joining</span>
+                  <form class="row row-cols-sm-auto">
+                    <div class="col-12">
+                      <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                               name="dp" [(ngModel)]="doj" ngbDatepicker #d="ngbDatepicker">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button" style="
+                        width: 23px;
+                        height: 21px;
+                    " ><img src="../../../../assets/images/download.png" style="padding-left: 0px;padding-top: 0px;padding-right: 1px;padding-bottom: 0px;
+                            height: 16px;
+                            width: 19px;"></button>
+                      </div>
+                    </div>
+                  </form>
+                  
+                  
+             
                 </div>
         </div>
 
         <div class="text-c">
 
-            <button class="form-control-btn">Register</button >
+            <button (click)="Registration()" class="form-control-btn">Register</button >
             <div>
                 <p>Already have an account ?</p>
-                <a href="#">Login</a>
+                <a href="Auth/Login">Login</a>
             </div>
         </div>
     </div>

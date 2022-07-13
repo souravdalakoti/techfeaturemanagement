@@ -24,21 +24,19 @@
                 <p class="f-18">select designation</p>
                 <img src="../../../../assets/images/icon1.png"	>
                 <ul [style.Display]="veiw?'none':'block'" class="design-ul">
-                    <li>select desidnation</li>
-                    <li>web developer</li>
-                    <li>web designer</li>
-                    <li>android developer</li>
-                </ul>
+                    
+                    <li  *ngFor="let item of designation">{{item.designation_name}}</li>
+                  </ul>
 
             </div>
             <div>search	</div>
         </div>
 <!-- ----------------------------------------------------------------------------------------------------------- -->
-        <div class="content-body">
-            <div>
-                <a routerLink="/EmployeeDetail"><img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p></a>
-                <p class="c-gray">Web Developer</p>
+        <div class="content-body" >
+            <div *ngFor="let item of emp">
+                <a routerLink="/EmployeeDetail"><img [src]='item.emp_image'>
+                <p class="f-20">{{item.firstname}} {{item.middlename}} {{item.lastname}}</p></a>
+                <p class="c-gray">{{item.designation}}</p>
                 <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
                 <ul [style.Display]="show?'none':'block'" class="div-ul active">
                     <li>
@@ -49,191 +47,7 @@
                     Delete</li>
                 </ul>
             </div>
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-             <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-
-
-            <div>
-                <img src="../../../../assets/images/img3.png">
-                <p class="f-20">Catherine Manseau</p>
-                <p class="c-gray">Web Developer</p>
-                <img src="../../../../assets/images/dots.png" (click)="show=!show" class="dots">
-                <ul [style.Display]="show?'none':'block'" class="div-ul active">
-                    <li>
-                    <img src="../../../../assets/images/edit.png">
-                    Edit</li>
-                    <li >
-                        <img src="../../../../assets/images/delete.png">
-                    Delete</li>
-                </ul>
-            </div>
-            
+          
             
         </div>
 </div>
