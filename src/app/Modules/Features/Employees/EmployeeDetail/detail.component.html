@@ -1,5 +1,5 @@
 
-<div class="main">
+<div class="main" *ngFor="let item of emp">
     <div class="page-header">
 
         <h1>Profile</h1>
@@ -9,40 +9,40 @@
 
     <div class="card-body">
         <div>
-            <img src="../../../../assets/images/img3.png"
+            <img [src]="item.emp_image"
             class="profile-img">
         </div>
         <div class="p-rl">
             <div class="profile-basic d-flex spc-btw">
                     <div class="profile-info-left">
-                        <h3>John Doe</h3>
+                        <h3>{{item.firstname}} {{item.middlename}} {{item.lastname}} </h3>
                         <h6>UI/UX Design team</h6>
-                        <h6>Web designer</h6>
-                        <p>Employee ID</p>
-                        <P class="clr-grey">date of join : 1 jan 2013</P>
+                        <h6>{{item.designation}}</h6>
+                        <p>EmployeeID:{{item.emp_id}}</p>
+                       <P class="clr-grey">Date of Join:{{item.doj}}</P>
 
                     </div>
                     <div>
                         <ul class="personal-info infoo">
                             <li class="d-flex">
                                 <div class="title">phone:</div>
-                                <div class="txt">2928930989</div>
+                                <div class="txt">{{item.phone_no}}</div>
                             </li>
                             <li class="d-flex">
                                 <div class="title">Email:</div>
-                                <div><a href="">kdjfkjd@123</a></div>
+                                <div><a href="">{{item.emailid}}</a></div>
                             </li>
                             <li class="d-flex">
                                 <div class="title">Birthday:</div>
-                                <div class="txt">12 th july</div>
+                                <div class="txt">{{item.dob}}</div>
                             </li>
                             <li class="d-flex">
                                 <div class="title w-60">Address:</div>
-                                <div class="txt ">1861 Bayonne Ave, Manchester Township, NJ, 08759</div>
+                                <div class="txt ">{{item.address}}</div>
                             </li>
                             <li class="d-flex">
                                 <div class="title">Gender:</div>
-                                <div class="txt">Male</div>
+                                <div class="txt">{{item.gender}}</div>
                             </li>
                             <li class="d-flex">
                                 <div class="title">Reports us:</div>

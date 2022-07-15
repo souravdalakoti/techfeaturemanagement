@@ -14,9 +14,11 @@ const routes: Routes = [
      
       { path: 'Employees',loadChildren: () => import('./Employees/All Employees/employees.module').then(module => module.EmployeesModule), data: { title: 'Employees' } },
       { path: 'Holidays',loadChildren: () => import('./Employees/Holidays/holidays.module').then(module => module.HolidaysModule), data: { title: 'Holidays' } },
-      { path: 'Leaves(Admin)',loadChildren: () => import('./Employees/Leaves(Admin)/admin.module').then(module=>module.AdminModule),data: { title: 'Leave(Admin)' } },
+      { path: 'Leaves(Admin)',loadChildren: () => import('./Admin/Leaves(Admin)/admin.module').then(module=>module.AdminModule),data: { title: 'Leave(Admin)' } },
       { path: 'Attendance(Employee)',loadChildren: () => import('./Employees/Attendance(Employee)/attendance.module').then(module=>module.AttendanceModule),data: { title: 'Attendance(Employee)' } },
-      { path: 'EmployeeDetail',loadChildren: () => import('./Employees/EmployeeDetail/detail.module').then(module=>module.DetailModule),data: { title: 'EmployeeDetail' } },
+      { path: 'EmployeeDetail/:id',loadChildren: () => import('./Employees/EmployeeDetail/detail.module').then(module=>module.DetailModule),data: { title: 'EmployeeDetail' } },
+      { path: 'Attendance(Admin)',loadChildren: () => import('./Admin/Attendance(Admin)/attendance(admin).module').then(module=>module.AdminAttendanceModule),data: { title: 'Attendance(Admin)' } },
+      { path: 'Leaves(Employees)',loadChildren: () => import('./Employees/Leave(Employee)/leave(employee).module').then(module=>module.LeaveEmployeeModule),data: { title: 'Attendance(Admin)' } },
     ]
 },
 

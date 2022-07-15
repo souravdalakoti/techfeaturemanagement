@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { RouterModule } from '@angular/router';
 import { DetailRoutingModule } from './detail-routing.module';
@@ -10,10 +12,10 @@ import { DetailComponent } from './detail.component';
  DetailComponent
   ],
   imports: [
-RouterModule,DetailRoutingModule
+RouterModule,DetailRoutingModule,CommonModule,FormsModule
   
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [DetailComponent]
 })
 export class DetailModule {}

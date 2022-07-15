@@ -30,4 +30,16 @@ export class EmployeeService{
       
       return this.api.get(this.apiController + "/GetPosition");
     }
+    GetEmployeeByDesignation(id:number){
+
+      return this.api.get(this.apiController +"/GetEmployeeByDesignation?designation_id="+id)
+    }
+    Search_Empname_empid(param:string){
+
+      return this.api.get(this.apiController +"/Search_Empname_empid?param="+param)
+    }
+    GetEmployeeDetailById(id:number){
+
+      return this.api.get(this.apiController +"/GetEmployeeDetailById?id="+id)
+    }
 }

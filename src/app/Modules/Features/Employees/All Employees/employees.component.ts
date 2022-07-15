@@ -10,24 +10,31 @@ styleUrls:['./employees.component.css']
 })
 
 export class EmployeesComponent{
-    veiw:boolean=true;
+    search:string='';
+    isviewshow:boolean=false;
+    designation_id:number= 0;
     show:boolean=true;
     emp:any;
     designation:any|undefined;
     image:any|undefined;
+    selectedEmpId:any=0;
+
 
     constructor(private emp_service:EmployeeService,private sanitizer: DomSanitizer){}
     
     
     ngOnInit(){
         
-        debugger
+     
+    
         this.emp_service.GetDesignation().subscribe((data)=>
         {
             this.designation=data;
         })
+        if(this.designation_id==0)
+        {
       this.emp_service.GetEmployeeDetails().subscribe((result)=>{
-        debugger
+      
       if(result!=null)
       {
         var i = result[0].emp_image;
@@ -39,7 +46,58 @@ export class EmployeesComponent{
         alert("Oops! Something went wrong")
       }
       })
-
+    }
+    else{
+      this.emp_service.GetEmployeeByDesignation(this.designation_id).subscribe((data)=>
+      {
+        
+        if(data!=null && data!=0)
+        {
+          var i = data[0].emp_image;
+          console.log(i);
+          this.emp='';
+          this.emp=data;
+         
+        }
+        else{
+          this.emp=[];
+        }
+        })
+     
+    }
+      }
+      onChange(value:any){
+        this.ngOnInit();
       }
 
+      Searching(data:string){
+       
+     if(data=='' || data==undefined)
+     {
+      this.ngOnInit();
+     }
+     else{
+        this.emp_service.Search_Empname_empid(data).subscribe((result)=>{
+          debugger
+
+          if(result!=null){
+            this.emp='';
+            this.emp=result;
+          }
+        })
+      }
+    }
+
+    HideShow(id:number)
+    {
+     if(this.isviewshow==false)
+     {
+      this.selectedEmpId=id;
+      this.isviewshow=true;
+     }
+     else{
+      this.selectedEmpId=0;
+      this.isviewshow=false;
+     }
+    }
 }
