@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { EmployeeService } from '../shared/services/employee.service';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { FeatureComponent } from './feature.component';
 
@@ -12,7 +13,7 @@ import { FeatureComponent } from './feature.component';
  FeatureRoutingModule,RouterModule
   
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: []
 })
 export class FeatureModule {}

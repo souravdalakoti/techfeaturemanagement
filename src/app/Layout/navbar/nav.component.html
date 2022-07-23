@@ -5,7 +5,7 @@
 
         <li (click)="view=!view" class="profile">
             <img src="../../../assets/images/img3.png" >
-            <p class="show" >Admin</p>
+            <p class="show" >{{emp.firstname}}</p>
             <img src="../../../assets/images//icon1.png" style="height: 15px" class="arrw">
             <!-- <ul [style.Display]="view?'none':'block'" class="active">
                 <li>my profile</li>
@@ -17,9 +17,9 @@
         </li>
     </ul>
     <ul [style.Display]="view?'none':'block'" class="active">
-        <li>my profile</li>
+        <a routerLink="/profile" ><li>my profile</li></a>
         <li>setting</li>
-        <li><a routerLink="Auth/Login">Logout</a></li>
+        <li (click)="logout()">Logout</li>
     </ul>
     <img src="../../../../assets/images/dots.png" (click)="view=!view" class="dots" >
 

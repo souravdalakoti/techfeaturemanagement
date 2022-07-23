@@ -94,7 +94,7 @@ ul li{list-style: none;}
             padding: 20px; 
             position: relative;
             box-shadow: 0 1px 1px #0003;
-            overflow: hidden}
+            overflow: auto}
 
 
 .col h2{margin-bottom: 20px}
@@ -257,3 +257,14 @@ ul li{list-style: none;}
 
 }
 
+.btn-punchin{    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+    /* max-width: 100%; */
+    margin: auto;
+    display: inherit;
+    padding: 8px 40px;
+    background: rgb(0, 255, 21);
+    background-color: #44ff4d;
+    border: 1px solid #44ff7c;color: white;margin: 30px auto}
