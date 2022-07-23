@@ -1,26 +1,27 @@
 
         <div class="main">
                     <div class="main-header">
-                        <h1>Employee</h1>
-                        <p>Dashboard / Employee</p>
+                        <h1>Attendance</h1>
+                        <p>Dashboard / Attendance</p>
                     </div>
 
 
                     <div class="row">
                         <div class="col">
                             
-                            <h2 class="card-title">Timesheet<span class="clr-grey"> 11 March 2019</span></h2>
+                            <h2 class="card-title">Timesheet<span class="clr-grey"> {{getdate}}</span></h2>
                             <div class="punch-det">
                                 <h5>Punch In at</h5>
-                                <p>Wed, 11th Mar 2019 10.00 AM</p>
+                                <p>{{punch_in}} {{time | date:'hh:mm a'}}</p>
                             </div>
 
-                            <div class="punch-hour"><span>3.45 hrs</span></div>
-                            <button class="btn">Punch Out</button>
+                            <div class="punch-hour"><span>{{hours}}:{{mins}}:{{secs}}</span></div>
+                            <button class="btn-punchin" [style.display]="hide?'block':'none'" (click)="punchin()">Punch In</button>
+                            <button class="btn" [style.display]="hide?'none':'block'" (click)="punchout()">Punch Out</button>
                             <div class="d-flex spc-btw">
                                 <div class="stats-box">
                                     <p>Break</p>
-                                    <h4>1.21 hrs</h4>
+                                    <h4>{{ break | number : '1.2-2' }} hrs</h4>
                                 </div>
                                 <div class="stats-box">
                                     <p>Break</p>
@@ -82,51 +83,23 @@
                         <div class="col">
                             <h2>Today Activity</h2>
                             <ul class="Activity-list">
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-                                <li>
-                                    <p>Punch In at</p>
-                                    <p class="d-flex">
-                                        <img src="../../../../assets/images/clock.png"> 
-                                        10.00 AM.
-                                     </p>
-                                </li>
-                                
-                                
+                                <ng-container *ngFor="let item of activity" >
+                                    <li *ngIf="item.punch_in!=null">
+                                        <p>Punch In at</p>
+                                        <p class="d-flex" >
+                                            <img src="../../../../assets/images/clock.png"> 
+                                            {{item.punch_in | date:'hh:mm a'}}
+                                         </p>
+                                    </li>
+                                    <li *ngIf="item.punch_out!=null">
+                                        <p>Punch Out at</p>
+                                        <p class="d-flex" >
+                                            <img src="../../../../assets/images/clock.png"> 
+                                            {{item.punch_out | date:'hh:mm a'}}
+                                         </p>
+                                    </li>
+                                </ng-container>
+                               
                             </ul>
                         </div>
                     </div>

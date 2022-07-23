@@ -19,6 +19,7 @@ const routes: Routes = [
       { path: 'EmployeeDetail/:id',loadChildren: () => import('./Employees/EmployeeDetail/detail.module').then(module=>module.DetailModule),data: { title: 'EmployeeDetail' } },
       { path: 'Attendance(Admin)',loadChildren: () => import('./Admin/Attendance(Admin)/attendance(admin).module').then(module=>module.AdminAttendanceModule),data: { title: 'Attendance(Admin)' } },
       { path: 'Leaves(Employees)',loadChildren: () => import('./Employees/Leave(Employee)/leave(employee).module').then(module=>module.LeaveEmployeeModule),data: { title: 'Attendance(Admin)' } },
+      { path: 'profile',loadChildren: () => import('./profile/profile.module').then(module=>module.ProfileModule),data: { title: 'Attendance(Admin)' } },
     ]
 },
 

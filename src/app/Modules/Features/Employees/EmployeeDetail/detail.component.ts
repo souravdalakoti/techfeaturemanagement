@@ -5,7 +5,7 @@ import { EmployeeService } from "src/app/Modules/shared/services/employee.servic
 @Component({
     selector:"app-detail",
     templateUrl:'./detail.component.html',
-    styleUrls:['./detail.component.css']
+    styleUrls:['./detail.component.scss']
 })
 
 export class DetailComponent{
@@ -13,11 +13,12 @@ export class DetailComponent{
         show:boolean=true;
         id:any;
        emp:any=[];
+       image:string='';
        number:number=0;
     constructor(private serive:EmployeeService,private router: ActivatedRoute){}
 
     ngOnInit(){
-       
+       debugger
         this.router.params.subscribe(params=>{
 
             this.id=params;
@@ -27,14 +28,15 @@ export class DetailComponent{
             debugger
             if(data!=null && data!=0)
             {
-              var i = data[0].emp_image;
-              console.log(i);
+          
+             
               this.emp='';
               this.emp=data;
+            
              
             }
             else{
-              this.emp=[];
+              this.emp='';
             }
             })
         

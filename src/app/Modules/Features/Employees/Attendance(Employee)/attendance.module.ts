@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { AttendanceComponent } from './attendance.component';
@@ -9,7 +10,7 @@ import { AttendanceComponent } from './attendance.component';
  AttendanceComponent
   ],
   imports: [
-AttendanceRoutingModule,RouterModule
+AttendanceRoutingModule,RouterModule,CommonModule
   
   ],
   providers: [],

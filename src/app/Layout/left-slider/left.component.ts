@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 @Component({
     selector:'app-left-slider',
   templateUrl:'./left.component.html',
-    styleUrls:['./left.component.css']
+    styleUrls:['./left.component.scss']
 })
 
 export class LeftComponent{

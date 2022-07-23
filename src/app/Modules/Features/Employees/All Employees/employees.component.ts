@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
-import { viewport } from "@popperjs/core";
+
 import { EmployeeService } from "src/app/Modules/shared/services/employee.service";
 
 @Component({
 selector:'app-employees',
 templateUrl:'./employees.component.html',
-styleUrls:['./employees.component.css']
+styleUrls:['./employees.component.scss']
 })
 
 export class EmployeesComponent{
@@ -78,7 +78,7 @@ export class EmployeesComponent{
      }
      else{
         this.emp_service.Search_Empname_empid(data).subscribe((result)=>{
-          debugger
+        
 
           if(result!=null){
             this.emp='';

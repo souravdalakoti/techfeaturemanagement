@@ -5,9 +5,7 @@ import { HttpService } from './http.service';
 
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class EmployeeService{
 
@@ -42,4 +40,22 @@ export class EmployeeService{
 
       return this.api.get(this.apiController +"/GetEmployeeDetailById?id="+id)
     }
+getuserprofile(){
+
+  return this.api.get(this.apiController + "/GetProfileInfo");
+
 }
+punchin(data:any)
+{
+return this.api.post(this.apiController + "/PunchIn", data);
+}
+punchout(data:any)
+{
+return this.api.post(this.apiController + "/PunchOut", data);
+}
+activity(id:number){
+  return this.api.get(this.apiController + "/GetEmployeeActivityRecord?id="+id);
+
+}
+}
+

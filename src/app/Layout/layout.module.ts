@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { PipeComponent } from '../Modules/shared/custom-pipes/pipe.component';
+import { AuthGuard } from '../Modules/shared/auth/auth.guard';
 import { AuthComponent } from './auth/auth.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { LeftComponent } from './left-slider/left.component';
 import { NavComponent } from './navbar/nav.component';
+import { EmployeeService } from '../Modules/shared/services/employee.service';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { NavComponent } from './navbar/nav.component';
    LayoutRoutingModule,RouterModule,CommonModule
    
   ],
-  providers: [],
+  providers: [AuthGuard,EmployeeService],
   bootstrap: []
 })
 export class LayoutModule { }

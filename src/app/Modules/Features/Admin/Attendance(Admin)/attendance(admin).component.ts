@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
 
     selector:'Attendance(Admin)"',
     templateUrl:'./attendance(admin).component.html',
-    styleUrls:['./attendance(admin).component.css']
+    styleUrls:['./attendance(admin).component.scss']
 })
 
 export class AdminAttendanceComponent{

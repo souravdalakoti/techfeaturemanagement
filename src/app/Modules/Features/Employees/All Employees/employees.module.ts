@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   EmployeesRoutingModule,RouterModule,CommonModule,FormsModule
   
   ],
-  providers: [AuthService,EmployeeService],
+  providers: [EmployeeService],
   bootstrap: []
 })
 export class EmployeesModule {}
