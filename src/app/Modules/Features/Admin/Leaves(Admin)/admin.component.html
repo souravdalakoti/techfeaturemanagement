@@ -1,5 +1,480 @@
 
 
-    <h1 style="font-size: 170px;color: brown;">NAHI AA RAHA HAI AAJ</h1>
+  
+<div class="content">
+    <div [style.Display]="view?'none':'block'"  class="fade-show">
+        <div  class="add-leave-form">
+            <img (click)="view=!view" src="../../../../../assets/images/cross.png" class="dots">
+
+        <ul>
+            <li>
+                <h1>Add leave</h1>
+                <p>leave type <span>*</span></p>
+                
+                <div class="form-feild">
+                    <select class="w-100">
+                        <option _ngcontent-qvn-c64=""></option>
+                        <option _ngcontent-nbb-c64="">Casual Leave</option>
+                        <option _ngcontent-nbb-c64="">Medical Leave</option>
+                        <option _ngcontent-nbb-c64="">Loss of Pay</option>
+                    </select>
+                   
+                </div>
+            
+            </li>
+            <li>
+                <p>From<span>*</span></p>
+                <div class="w-100 form-feild"> 
+                    <input type="text" required>
+                    <span>*form is required</span>
+                    <img _ngcontent-hle-c113="" src="../../../../assets/images/celendr-icon.png">
+                </div>
+               
+            
+            </li>
+            <li>
+                <p>To<span>*</span></p>
+                <div class="w-100 form-feild"> 
+                    <input type="">
+                    <img _ngcontent-hle-c113="" src="../../../../assets/images/celendr-icon.png">
+                </div>
+               
+            </li>
+            <li>
+                <p>Number of Days<span>*</span></p>
+                <div class="w-100 form-feild"> 
+                <input type="">
+                </div>
+        
+            
+            </li>
+            <li>
+                <p>Remaining leaves<span>*</span></p>
+                <div class="w-100 form-feild"> 
+                <input type="text">
+                </div>
+                
+            
+            </li>
+            <li>
+                <p>Leave Reason<span>*</span></p>
+                <div class="form-feild">
+                <textarea  rows="5"></textarea>
+                </div>
+                
+            
+            
+            
+            </li>
+            
+        </ul>
+
+        <div class="leave-frm-btn" >
+            <a href="#">Submit</a>
+        </div>
+        
 
 
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="page-header d-flex justify-btw">
+        <div>
+            <h1>Leaves</h1>
+            <ul class="d-flex">
+                <li>Dashboard</li>
+                <li class="clr-gry"> / Leaves</li>
+            </ul>
+        </div>
+        <div>
+           <button (click)="view=!view">+ Add Leave</button>
+        </div>
+    </div>
+
+
+    <!-- body col-md 3......................................................... -->
+
+    <div class="row d-flex justify-btw wrap">
+        <div class="col-md-3">
+            <div class="stats-info">
+                <h6 _ngcontent-ugq-c64="">Today Presents</h6>
+                <h4 _ngcontent-ugq-c64="">12 / 5</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-info">
+                <h6 _ngcontent-ugq-c64="">Planed Leaves</h6>
+                <h4 _ngcontent-ugq-c64="">8 Today</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-info">
+                <h6 _ngcontent-ugq-c64="">Unplaned Leaves</h6>
+                <h4 _ngcontent-ugq-c64="">1 Today</h4>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-info">
+                <h6 _ngcontent-ugq-c64="">Pandding Request </h6>
+                <h4 _ngcontent-ugq-c64="">12</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- col-md-6 ...................................................-->
+
+    <div class="row d-flex justify-btw wrap">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <input type="text" placeholder="Employee Name">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label _ngcontent-qvn-c64="" class="focus-label">Leave Type</label>
+                <select>
+                    <option _ngcontent-qvn-c64=""> -- Select -- </option>
+                    <option _ngcontent-nbb-c64="">Casual Leave</option>
+                    <option _ngcontent-nbb-c64="">Medical Leave</option>
+                    <option _ngcontent-nbb-c64="">Loss of Pay</option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <select>
+                        <option _ngcontent-qvn-c64=""> -- Select -- </option>
+                        <option _ngcontent-qvn-c64=""> Pending </option>
+                        <option _ngcontent-qvn-c64=""> Approved </option>
+                        <option _ngcontent-qvn-c64=""> Rejected </option>
+                </select>
+                <label _ngcontent-qvn-c64="" class="focus-label">Leave Status</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group cal-icon">
+                <input type="text" placeholder="From">
+                <img src="../../../../assets/images/celendr-icon.png">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group cal-icon">
+                <input type="text" placeholder="To">
+                <img src="../../../../assets/images/celendr-icon.png">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group btn">
+                <a href="#">Search</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- entreis........................................................ -->
+
+    <div class="entries">
+        <label >
+            show 
+            <select>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+
+            entries
+        </label>
+    </div>
+
+    <!-- data table............................................................. -->
+
+    <div  class="data-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Leave Type</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>No of Days</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class=" profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>John Smith
+                            <span style="display: block"> web developer</span>
+                        </p>
+                        
+                    </td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div>
+
+                    </td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-td">
+                        <img src="../../../../assets/images/Name_Icon-01.png" >
+                        <p>djshksjkhfjk
+                            <span style="display: block"> ajdfk</span>
+                        </p></td>
+                    <td>Leave Type</td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>No of Days</td>
+                    <td>Reason</td>
+                    <td (click)="show=!show">
+                        <p>
+                            <input checked="checked" type="radio">
+                            dclined	
+                        <p>
+                        <div [style.Display]="show?'none':'block'" class="dropdown">
+                            <ul >
+                                <li> <input checked="checked" type="radio"> New</li>
+                                <li> <input checked="checked" type="radio"> Pandding</li>
+                                <li> <input checked="checked" type="radio"> Approved</li>
+                                <li> <input checked="checked" type="radio"> declined</li>
+                            </ul>
+
+                        </div></td>
+                    <td (click)="visible=!visible">
+                        <img src="../../../../assets/images/dots.png" class="dots">
+
+                        <div [style.Display]="visible?'none':'block'" class="dropdown2">
+                            <ul>
+                                <li class="d-flex"><img src="../../../../../assets/images/edit.png"> edit</li>
+                                <li class="d-flex"><img src="../../../../../assets/images/delete.png">delete</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="data-table-info">showing 1 to 7 of 7 entries</div>
+        <div class="paging-num">
+            <ul class="d-flex">
+                <li><a href="#">Previous</a></li>
+                <li class="num"><a href="#">1</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+            
+        
+    </div>
+</div>
