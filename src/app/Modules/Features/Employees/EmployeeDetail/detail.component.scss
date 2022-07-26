@@ -1,6 +1,7 @@
 
-
+@import'src/styles';
 *{margin: 0;padding: 0}
+@include commoncode;
 
 ul li{list-style: none;padding: 0 10px;}
 .f-20{font-size: 20px;font-weight: 600}
@@ -12,7 +13,7 @@ ul li{list-style: none;padding: 0 10px;}
 .h-220{height: 250px;}
 .w-60{width: 60% !important;}
 a{ color: blue;text-decoration: none; font-size: 18px}
-.d-flex{display: flex;}
+
 .spc-btw{justify-content: space-between;}
 .clr-grey{    color: #a79a9a}
 

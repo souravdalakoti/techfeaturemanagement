@@ -56,9 +56,13 @@ background: lightblue}
 	.arrw{display: none;}
 }
 
-@media(max-width:540px){ 
+
+@media(max-width:768px){
 	.right-nav-ul{display: none;}
 	.dots{display: block;}
+}
+@media(max-width:540px){ 
+	
 	.active{right: 10px;}
 }
 

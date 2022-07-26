@@ -7,6 +7,9 @@ styleUrls:['./admin.component.scss']
 })
 
 export class AdminComponent{
+    view:boolean=true;
+    show:boolean=true;
+    visible:boolean=true;
 
     constructor(){}
 }
