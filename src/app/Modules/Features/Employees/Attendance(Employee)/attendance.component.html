@@ -15,7 +15,7 @@
                                 <p>{{punch_in}} {{time | date:'hh:mm a'}}</p>
                             </div>
 
-                            <div class="punch-hour"><span>{{hours}}:{{mins}}:{{secs}}</span></div>
+                            <div class="punch-hour"><span>{{hh}}:{{mm}}:{{ss}}</span></div>
                             <button class="btn-punchin" [style.display]="hide?'block':'none'" (click)="punchin()">Punch In</button>
                             <button class="btn" [style.display]="hide?'none':'block'" (click)="punchout()">Punch Out</button>
                             <div class="d-flex spc-btw">
@@ -166,26 +166,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>19 Feb 2019</td>
-                    <td>10 AM</td>
-                    <td>7 PM</td>
-                    <td>9 rs</td>
-                    <td> hrs</td>
+                <tr *ngFor="let item of activitylist">
+                    <td>{{item.series_number}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{ item.punch_in | date:'hh:mm a'}}</td>
+                    <td>{{ item.punch_out | date:'hh:mm a'}}</td>
+                    <td>{{ item.production_hours | number : '1.2-2' }} hrs</td>
+                    <td>{{ item.break_hours | number : '1.2-2' }} hrs</td>
                     <td>0</td>
 
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>20 Feb 2019</td>
-                    <td>10 AM</td>
-                    <td>7 PM</td>
-                    <td>9 rs</td>
-                    <td> hrs</td>
-                    <td>0</td>
-
-                </tr>
+               
             </tbody>
         </table>
     </div>

@@ -57,5 +57,9 @@ activity(id:number){
   return this.api.get(this.apiController + "/GetEmployeeActivityRecord?id="+id);
 
 }
+activitylist(id:number){
+  return this.api.get(this.apiController + "/GetEmployeeActivityRecordList?id="+id);
+
+}
 }
 

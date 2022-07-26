@@ -15,7 +15,7 @@ export class AttendanceComponent{
  show:boolean=true;
  hide:boolean=true;
  id:number=0;
- activity_id:number|undefined;
+ activity_id:any=[];
  punch_in: any=[];
  punch_out: any=[];
  currentdate:any;
@@ -26,12 +26,17 @@ export class AttendanceComponent{
  emp:any=[];
  break:number=0;
  activity:any=[];
-hours:any='00';
-mins:any='00';
-secs:any='00';
+hours:number=0;
+mins:number=0;
+secs:any;
+hh:any='00';
+mm:any='00';
+ss:any='00';
 timer1:any; 
 timer2:any;
 timer3:any;
+activitylist:any=[];
+
 
     constructor(private service:EmployeeService){}
 ngOnInit(){
@@ -42,10 +47,42 @@ this.getdate=this.daTe[2]+' '+this.daTe[1]+' '+this.daTe[3];
 this.service.getuserprofile().subscribe((data)=>{
    
 this.id=data.id;
+this.service.activitylist(this.id).subscribe((result)=>{
+    debugger;
+this.activitylist=result;
+for(var i=0;i<this.activitylist.length;i++)
+{
+    var series_number=i+1;
+    this.activitylist[i].series_number=series_number;
+    var datee=new Date(this.activitylist[i].date);
+    var datetime=(new Date(this.activitylist[i].date).toDateString()).split(" ",4);
+    var datestring=datetime[2]+' '+datetime[1]+' '+datetime[3];
+    this.activitylist[i].date=datestring;
+
+    this.activitylist[i].punch_in=new Date(this.activitylist[i].punch_in);
+    this.activitylist[i].punch_out=new Date(this.activitylist[i].punch_out);
+}  
+})
 this.service.activity(this.id).subscribe((result)=>{
-    debugger
+
+    this.labelofpunchin();
+    var ww= result.working_hours.split(":",3);
+    if(Number(ww[0])!=0 && Number(ww[0])>=10)
+    this.hh=Number(ww[0]);
+    else
+    this.hh='0'+Number(ww[0]);
+    if(Number(ww[1])!=0 && Number(ww[1])>=10)
+    this.mm=Number(ww[1]);
+    else
+    this.mm='0'+Number(ww[1]);
+    if(Number(ww[2])!=0 && Number(ww[2])>=10){
+    this.ss=Math.trunc(Number(ww[2]));}
+    else{
+    this.ss='0'+Math.trunc(Number(ww[2]));}
     var x=result.working_hours;
     this.break=result.break_hours;
+    
+   this.activity_id= result.activity[result.activity.length-1].activity_id;
 for(var i=0;i<result.activity.length;i++)
 {
     if(result.activity[i].punch_out==null )
@@ -57,11 +94,12 @@ for(var i=0;i<result.activity.length;i++)
 }
 if(result.activity[result.activity.length-1].punch_out==null)
 {
-
+    this.interval(1);
     this.hide=false;
 }
 if(result.activity[result.activity.length-1].punch_out!=null)
 {
+    this.interval(0);
     this.hide=true;
 }
 })
@@ -70,62 +108,56 @@ if(result.activity[result.activity.length-1].punch_out!=null)
 }
 
 
-interval(T:number){
-    debugger
-    var i=0;
-var j=0;
-var k=0;
+interval(T:number)
+{   
 
 
 
+            if(T==0)
+            {
+          
+                clearInterval(this.timer1);
+              
+            }
 
-if(T==0)
-{
-   debugger;
-    clearInterval(this.timer1);
-    clearInterval(this.timer2);
-    clearInterval(this.timer3);
-}
-
-    else{
-        debugger
-this.timer1=setInterval(()=>{
-    debugger
-    i=this.secs; 
-    i++;
-   
-    if(i==60)
-    i=0;
-    if(i<10)
-    this.secs='0'+i;
-    else
-    this.secs=i;
-},1000)
-
-
-this.timer2==setInterval(()=>{
-    j=this.mins; 
-    j++;
-   
-    if(j==60)
-    j=0;
-    if(j<10)
-    this.mins='0'+j;
-    else
-    this.mins=j;
-},60000)
-this.timer3==setInterval(()=>{
-    k=this.hours; 
-    k++;
-   
-    if(k==60)
-    k=0;
-    if(k<10)
-    this.hours='0'+k;
-    else
-    this.hours=k;
-},60000*60)
-}
+                else{
+              
+                
+                   
+            this.timer1=setInterval(()=>{
+            
+               this.ss++;
+             
+               if(this.ss==60) 
+              {
+                this.mm++;
+                
+                this.ss=0;
+              }
+              if(this.mm==60)
+                {
+                     this.hh++;
+                    
+                     this.mm=0;
+                }
+                
+                if(this.ss<10)
+                {
+                    this.ss='0'+Number(this.ss);
+                }
+                if(this.mm<10)
+                {
+                    this.mm='0'+Number(this.mm);
+                }
+                if(this.hh<10)
+                {
+                    this.hh='0'+Number(this.hh);
+                }
+              
+            
+               
+            },1000)
+        }
 }
 
 punchin(){
@@ -140,13 +172,12 @@ punchin(){
         this.emp=data;
     this.interval(1);
       var datetime=new Date(data.date);
-      this.time=new Date(data.punch_in);
+    this.labelofpunchin();
       var history=new Date(data.punch_in);
       this.activity.push({punch_in:history,punch_out:null});
-      var _date=datetime.toDateString();
+     
       this.break+=data.break_in_hours;
-      var datesplit=_date.split(/\s+/);
-      this.punch_in=datesplit[0]+', '+datesplit[2]+' '+datesplit[1]+' '+datesplit[3];
+      
       this.activity_id=data.activity_id;
    
   
@@ -169,6 +200,17 @@ punchin(){
             var history=new Date(data.punch_out);
       this.activity.push({punch_in:null,punch_out:history});
         })
+    }
+
+    labelofpunchin(){
+
+        this.service.activity(this.id).subscribe((result)=>{
+            debugger
+            this.time=new Date(result.activity[0].punch_in);
+            var datetime=new Date(result.activity[0].punch_in.split(" ",1));
+            var _date=datetime.toDateString();
+            var datesplit=_date.split(/\s+/);
+            this.punch_in=datesplit[0]+', '+datesplit[2]+' '+datesplit[1]+' '+datesplit[3];});
     }
 }
 
