@@ -7,6 +7,10 @@ styleUrls:['./leave(employee).component.scss']
 })
 
 export class LeaveEmployeeComponent{
+//here
+view:boolean=true;
+show:boolean=true;
+visible:boolean=true;
 
     constructor(){}
 }
