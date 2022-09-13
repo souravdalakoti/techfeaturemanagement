@@ -17,12 +17,12 @@ export class ProfileComponent{
 
     constructor(private service:EmployeeService,private router: ActivatedRoute){}
     ngOnInit(){
-        debugger
+        
     
         
          
           this.service.getuserprofile().subscribe((data)=>{
-             debugger
+             
              if(data!=null && data!=0)
              {
            

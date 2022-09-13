@@ -1,0 +1,16 @@
+.content-body .div-ul img {
+	height: 13px;
+	padding-right: 10px;
+  }
+  .active {
+	position: absolute;
+	top: 35px;
+	right: 10px;
+	width: 150px;
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	transform-origin: left top 0;
+	box-shadow: inherit;
+	background-color: #fff;
+  }

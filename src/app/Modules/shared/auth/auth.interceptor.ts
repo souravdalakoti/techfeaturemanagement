@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
  
   constructor(public auth: AuthService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): NewType {
-    debugger;
+    
     this.detail=localStorage.getItem("Logindetail");
     if(this.detail!=null)
     {

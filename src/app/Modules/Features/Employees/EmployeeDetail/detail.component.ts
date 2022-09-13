@@ -18,14 +18,14 @@ export class DetailComponent{
     constructor(private serive:EmployeeService,private router: ActivatedRoute){}
 
     ngOnInit(){
-       debugger
+       
         this.router.params.subscribe(params=>{
 
             this.id=params;
         })
          this.number=Number(this.id.id)
          this.serive.GetEmployeeDetailById(this.number).subscribe((data)=>{
-            debugger
+            
             if(data!=null && data!=0)
             {
           

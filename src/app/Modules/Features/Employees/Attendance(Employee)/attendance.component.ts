@@ -48,7 +48,7 @@ this.service.getuserprofile().subscribe((data)=>{
    
 this.id=data.id;
 this.service.activitylist(this.id).subscribe((result)=>{
-    debugger;
+    
 this.activitylist=result;
 for(var i=0;i<this.activitylist.length;i++)
 {
@@ -161,14 +161,14 @@ interval(T:number)
 }
 
 punchin(){
-       debugger
+       
         
          var model={
         id:this.id,
    
      }
      this.service.punchin(model).subscribe((data)=>{
-        debugger
+        
         this.emp=data;
     this.interval(1);
       var datetime=new Date(data.date);
@@ -194,7 +194,7 @@ punchin(){
           }
         this.hide=true;
         this.service.punchout(model).subscribe((data)=>{
-            debugger
+            
             this.interval(0);
             this.punch_out=data;
             var history=new Date(data.punch_out);
@@ -205,7 +205,7 @@ punchin(){
     labelofpunchin(){
 
         this.service.activity(this.id).subscribe((result)=>{
-            debugger
+            
             this.time=new Date(result.activity[0].punch_in);
             var datetime=new Date(result.activity[0].punch_in.split(" ",1));
             var _date=datetime.toDateString();

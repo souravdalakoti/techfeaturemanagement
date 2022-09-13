@@ -15,7 +15,9 @@ export class LeftComponent{
   /*Apps-->*/{name:'Chats',path:"",SideBarMenu:2}, {name:'Call',path:"",SideBarMenu:2},{name:'Calendar',path:"",SideBarMenu:2},{name:'Contacts',path:"",SideBarMenu:2},{name:'Email',path:"",SideBarMenu:2},{name:'File Manager',path:"",SideBarMenu:2},
   /*Employees-->*/{name:'All Employees',path:"/Employees",SideBarMenu:3},{name:'Holidays',path:"/Holidays",SideBarMenu:3},{name:'Leaves(Admin)',path:"/Leaves(Admin)",SideBarMenu:3},{name:'Leaves(Employees)',path:"/Leaves(Employees)",SideBarMenu:3},{name:'Attendance(Admin)',path:"/Attendance(Admin)",SideBarMenu:3},{name:'Attendance(Employee)',path:"/Attendance(Employee)",SideBarMenu:3},
   /*Projects-->*/ {name:'Projects',path:"",SideBarMenu:4},{name:'Task',path:"",SideBarMenu:4},
-  /*Sales-->*/{name:'Payments',path:"",SideBarMenu:5},{name:'Invoice',path:"",SideBarMenu:5}
+  /*Sales-->*/{name:'Payments',path:"",SideBarMenu:5},{name:'Invoice',path:"",SideBarMenu:5},
+  /*TF coaching--->*/{name:'TFCoachingTrainee',path:"/TFCoachingclass",SideBarMenu:16}
+  
  
  
 ];
@@ -24,7 +26,8 @@ export class LeftComponent{
       {name:"Main",HeaderId:1},
       {name:"Employees",HeaderId:2},
       {name:"HR",HeaderId:3},
-      {name:"Performance",HeaderId:4}
+      {name:"Performance",HeaderId:4},
+      {name:"TFCoachingclass",HeaderId:5}
   ];
   
 
@@ -44,6 +47,7 @@ export class LeftComponent{
     {name:"Performance",HeaderId:4,SideBarMenu:13,IsSubmenu:true},
     {name:"Goals",HeaderId:4,SideBarMenu:14,IsSubmenu:true},
     {name:"Training",HeaderId:4,SideBarMenu:15,IsSubmenu:true},
+    {name:"TFCoachingclass",HeaderId:5,SideBarMenu:16,IsSubmenu:true},
   ]
 
    

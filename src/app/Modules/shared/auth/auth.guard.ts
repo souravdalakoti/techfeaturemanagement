@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 constructor(private route: Router,private auth : AuthService){}
   
 canActivate()
-{ debugger
+{ 
     if(this.auth.IsloggedIn())
     {
         return true; 

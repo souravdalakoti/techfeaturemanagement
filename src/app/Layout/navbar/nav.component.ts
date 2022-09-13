@@ -15,11 +15,11 @@ export class NavComponent{
     emp:any=[];
   detail:any=[];
     ngOnInit(){
-        debugger
+        
 
        
         this.service.getuserprofile().subscribe((data)=>{
-          debugger
+          
           if(data!=null && data!=0)
           {
         
@@ -36,7 +36,7 @@ export class NavComponent{
     }
 
     logout(){
-      debugger;
+      
       localStorage.clear();
       this.route.navigate(['Auth/Login']);
     }
