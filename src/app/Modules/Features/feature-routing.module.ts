@@ -21,8 +21,9 @@ const routes: Routes = [
       { path: 'Leaves(Employees)',loadChildren: () => import('./Employees/Leave(Employee)/leave(employee).module').then(module=>module.LeaveEmployeeModule),data: { title: 'Attendance(Admin)' } },
       { path: 'profile',loadChildren: () => import('./profile/profile.module').then(module=>module.ProfileModule),data: { title: 'Attendance(Admin)' } },
       { path: 'TFCoachingclass',loadChildren: () => import('./TFCoachingclass/TFCoachingTrainee.module').then(module=>module.TFCoachingTraineeModule),data: { title: 'TFCoachingclass' } },
-     
-     
+      {path:'TFEmployee',loadChildren:()=>import('./TFCoachingclass/TFEmployee/TFEmployee.module').then(module=>module.TFEmployeeModule),data:{title:'TFEmployee'}},
+      {path:'TFInvoice',loadChildren:()=>import('./TF-invoice/tfinvoice.module').then(module=>module.TFInvoiceModule),data:{title:'TFInvoice'}},
+      
     ]
 },
 

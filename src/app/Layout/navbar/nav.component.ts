@@ -15,7 +15,7 @@ export class NavComponent{
     emp:any=[];
   detail:any=[];
     ngOnInit(){
-        
+      
 
        
         this.service.getuserprofile().subscribe((data)=>{

@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+
+
 
 @Component({
 selector:'app-leave(employee)',
@@ -11,6 +14,10 @@ export class LeaveEmployeeComponent{
 view:boolean=true;
 show:boolean=true;
 visible:boolean=true;
+doj: any = {};
 
-    constructor(){}
+ngOnInit() {
+    
+}
+
 }

@@ -32,6 +32,8 @@ secs:any;
 hh:any='00';
 mm:any='00';
 ss:any='00';
+
+
 timer1:any; 
 timer2:any;
 timer3:any;
@@ -40,7 +42,7 @@ activitylist:any=[];
 
     constructor(private service:EmployeeService){}
 ngOnInit(){
-    
+    debugger
 this.currentdate=new Date().toDateString();
 this.daTe=this.currentdate.split(/\s+/);
 this.getdate=this.daTe[2]+' '+this.daTe[1]+' '+this.daTe[3];
@@ -48,10 +50,11 @@ this.service.getuserprofile().subscribe((data)=>{
    
 this.id=data.id;
 this.service.activitylist(this.id).subscribe((result)=>{
-    
+     
 this.activitylist=result;
 for(var i=0;i<this.activitylist.length;i++)
 {
+    
     var series_number=i+1;
     this.activitylist[i].series_number=series_number;
     var datee=new Date(this.activitylist[i].date);
@@ -64,8 +67,9 @@ for(var i=0;i<this.activitylist.length;i++)
 }  
 })
 this.service.activity(this.id).subscribe((result)=>{
-
+ debugger;
     this.labelofpunchin();
+    debugger
     var ww= result.working_hours.split(":",3);
     if(Number(ww[0])!=0 && Number(ww[0])>=10)
     this.hh=Number(ww[0]);
@@ -82,7 +86,8 @@ this.service.activity(this.id).subscribe((result)=>{
     var x=result.working_hours;
     this.break=result.break_hours;
     
-   this.activity_id= result.activity[result.activity.length-1].activity_id;
+  
+    this.activity_id= result.activity[result.activity.length-1].activity_id;
 for(var i=0;i<result.activity.length;i++)
 {
     if(result.activity[i].punch_out==null )
@@ -154,7 +159,9 @@ interval(T:number)
                     this.hh='0'+Number(this.hh);
                 }
               
-            
+
+                
+
                
             },1000)
         }
@@ -162,7 +169,7 @@ interval(T:number)
 
 punchin(){
        
-        
+       debugger; 
          var model={
         id:this.id,
    
@@ -187,7 +194,7 @@ punchin(){
        
     }
     punchout(){
-        
+        debugger;
           var model={
             activity_id:this.activity_id,
        
@@ -202,10 +209,9 @@ punchin(){
         })
     }
 
-    labelofpunchin(){
+        labelofpunchin(){
 
         this.service.activity(this.id).subscribe((result)=>{
-            
             this.time=new Date(result.activity[0].punch_in);
             var datetime=new Date(result.activity[0].punch_in.split(" ",1));
             var _date=datetime.toDateString();

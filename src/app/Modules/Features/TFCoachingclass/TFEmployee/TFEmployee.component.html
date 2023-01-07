@@ -1,0 +1,91 @@
+<h1>Tech Feature Employee_s</h1>
+<p>Dashboard/TFEmployee_s</p>
+
+<button (click)="Firstmodel(mymodal1)" class="btn btn-success">ADD Emp</button>
+
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">DOJ</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of employ">
+                <td>{{item.name}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.doj}}</td>
+                <td>{{item.mobile}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="Editpopup(item.employeeId,mymodal)" style="margin-right: 16px">Edit</button>
+                    <button type="button" (click)="Deldata(item.employeeId)" class="btn btn-secondary">Delete</button>
+                    
+                </td>
+
+            </tr>
+        </tbody>
+       
+
+        <ng-template #mymodal1 let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title" >AddNewEmployees</h4>
+                <button type="button
+                " class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <b>Name:</b><br>
+                <input [(ngModel)]="name" class="form-control" placeholder="Enter The Name"><br>
+                <b>Address</b><br>
+                <input [(ngModel)]="address" class="form-control" placeholder="Enter The Address">
+                
+                <b>DOJ:</b><br>
+                <input [(ngModel)]="doj" class="form-control" placeholder="Enter The Date Of Join"><br>
+                
+                <b>Mobile:</b><br>
+                <input [(ngModel)]="mobile" class="form-control" placeholder="Enter The Mobile No."><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modal.close"
+                    (click)="AddInsertdata()">ADD</button>
+                    
+            </div>
+
+        </ng-template>
+
+
+        <ng-template #mymodal let-modal>
+            <div class="modal-header">
+               <h4 class="modal-title" id="modal-basic-title">Update Employees</h4>
+               <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+             
+               <b>Name:</b><br>
+               <input type="text" [(ngModel)]="Name1" class="form-control" ><br><br>
+               <b>Address</b><br>
+               <input type="text" [(ngModel)]="Address1" class="form-control" ><br>
+                <b>DOJ</b><br>
+                <input type="text" [(ngModel)]="DOJ1" class="form-control"><br>
+               <b>Mobile</b><br>
+               <input type="text" [(ngModel)]="Mobile1" class="form-control"><br>
+              
+               
+           
+              <div  class="modal-footer">
+              <button type="button" (click)="Updatedata()" class="btn btn-primary">Update</button>
+            
+            </div>
+            </div>
+          </ng-template>
+        </table>
+          

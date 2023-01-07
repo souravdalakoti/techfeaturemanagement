@@ -1,0 +1,73 @@
+<h4 style="text-align: center;">Create New Invoice</h4>
+<div class="modal-body  mb-3">
+    <div class="row">
+        <div class="column">
+            <b>Invoice from Name:</b><br>
+            <input class="requiered" [(ngModel)]="Name" type="text" placeholder="Enter The Name" size="50"><br>
+            <b>Invoice from Address</b><br>
+            <input class="requiered" [(ngModel)]="Address" type="text" placeholder="Enter The Address" size="50"><br>
+
+            <b>Invoice from City:</b><br>
+            <input [(ngModel)]="City" type="text" placeholder="Enter The City" size="50"><br>
+
+            <b>Invoice from State:</b><br>
+            <input [(ngModel)]="State" type="text" placeholder="Enter The State" size="50"><br>
+            <b>Invoice from Country:</b><br>
+
+            <select [(ngModel)]="Country" type="text" placeholder="Enter The Country" class="w-75">
+                <option value="0" selected>Select</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+            </select><br>
+            <b>Invoice from Phone</b><br>
+            <input [(ngModel)]="Phone" type="text" placeholder="Enter The Phone" size="50"><br>
+
+            <b>Invoice from Email:</b><br>
+            <input [(ngModel)]="Email" type="text" placeholder="Enter The Email" size="50"><br>
+
+            <b>Invoice from WebSite:</b><br>
+            <input [(ngModel)]="website" type="text" placeholder="Enter The WebSite" size="50"><br>
+            <b>Amount:</b><br>
+            <input [(ngModel)]="Amount" type="text" placeholder="Enter The Amount" size="50"><br>
+            <b>GST Percent</b><br>
+            <input [(ngModel)]="GST_percent" type="text" placeholder="Enter The GST Percent" size="50"><br>
+            <b>GST Amount:</b><br>
+            <input [(ngModel)]="GST_Amount" type="text" placeholder="Enter The GST Amount" size="50"><br>
+            <b>Total Amount:</b><br>
+            <input [(ngModel)]="Total_Amount" type="text" placeholder="Enter The Total Amount" size="50"><br>
+        </div>
+        <div class="column">
+            <b>Invoice To Name</b><br>
+            <input [(ngModel)]="Name1" type="text" placeholder="Enter The Name" size="50"><br>
+
+            <b>Invoice To Address</b><br>
+            <input [(ngModel)]="Address1" type="text" placeholder="Enter The Address" size="50"><br>
+
+            <b>Invoice To City:</b><br>
+            <input [(ngModel)]="City1" type="text" placeholder="Enter The City" size="50"><br>
+            <b>Invoice To State:</b><br>
+            <input [(ngModel)]="State1" type="text" placeholder="Enter The State" size="50"><br>
+            <b >Invoice To Country</b><br>
+            <select name="Enter The Country"  [(ngModel)]="Country1"  class="w-75">
+                <option value="none" selected disabled hidden >Select</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="China">China</option>
+            </select><br>
+
+            <b>Invoice To Phone:</b><br>
+            <input [(ngModel)]="Phone1" type="text" placeholder="Enter The Phone" size="50"><br>
+
+            <b>Invoice To GST_NO:</b><br>
+            <input [(ngModel)]="GST_No1" type="text" placeholder="Enter The GST NO" size="50"><br>
+            <br>
+
+            <b>Description:</b><br>
+            <textarea [(ngModel)]="Description" class="form-control w-100" placeholder="Enter The Description"
+                rows="5"></textarea><br>
+
+            <button type="button" class="btn btn-primary" (click)="AddInsertInvoicedata()" routerLink="TFInvoice">Add Invoice</button>
+            <br>
+        </div>
+    </div>
+</div>

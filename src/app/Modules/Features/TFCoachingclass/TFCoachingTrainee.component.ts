@@ -57,6 +57,7 @@ export class TFCoachingTraineeComponent
   }
   AddCoachingTrainee()
   {
+    debugger;
     this.Data=
     {
       "Name":this.name,
@@ -144,17 +145,17 @@ export class TFCoachingTraineeComponent
       this.IsDeleteConfirmationPopup = false;
     }
   }
-}
+
   
-//   DeleteCoachingTrainee(Id:number)
-//   {
-//     alert(Id)
-//     this.TFCoachingclassservice.DeleteCoachingTrainee(Id).subscribe((data)=>
-//      {
-//        this.GetCoachingTraineeDetails();
-//       })
-//   }
-// }
+  DeleteCoachingTrainee(Id:number)
+  {
+    alert(Id)
+    this.TFCoachingclassservice.DeleteCoachingTrainee(Id).subscribe((data)=>
+     {
+       this.GetCoachingTraineeDetails();
+      })
+  }
+}
 
       
   
