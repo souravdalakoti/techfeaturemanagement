@@ -47,7 +47,7 @@ export class HttpService  {
   }
 
   private handleError(error: HttpErrorResponse) {
-    
+    debugger;
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);

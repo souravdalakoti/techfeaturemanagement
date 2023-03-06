@@ -1,0 +1,44 @@
+<div _ngcontent-kru-c76="" id="add_overtime" class="modal custom-modal fade show" style="display: block;" aria-modal="true" role="dialog">
+	<div _ngcontent-kru-c76="" role="document" class="modal-dialog modal-dialog-centered">
+		<div _ngcontent-kru-c76="" class="modal-content">
+			<div _ngcontent-kru-c76="" class="modal-header">
+				<h5 _ngcontent-kru-c76="" class="modal-title">Add Overtime</h5>
+				<button _ngcontent-kru-c76="" type="button" data-bs-dismiss="modal" aria-label="Close" data-bs-target="#add_overtime" (click)="hidemodal()" class="close"><span _ngcontent-kru-c76="" aria-hidden="true">×</span></button>
+			</div>
+			<div _ngcontent-kru-c76="" class="modal-body">
+				<form _ngcontent-kru-c76="" novalidate="" class="ng-untouched ng-pristine ng-invalid">
+					<div _ngcontent-kru-c76="" class="form-group">
+						<label _ngcontent-kru-c76="">Overtime Date<span _ngcontent-kru-c76="" class="text-danger">*</span></label>
+						<input [(ngModel)]="overtime_date" name="date" type="text" placeholder=" yyyy-mm-dd"  ngbDatepicker #d="ngbDatepicker" formcontrolname="OtHrs" class="form-control ng-untouched ng-pristine ng-invalid">
+						<!---->
+						<img _ngcontent-hle-c113="" (click)="d.toggle()" src="../../../../assets/images/celendr-icon.png">
+					</div>
+					<div _ngcontent-kru-c76="" class="form-group">
+						<label _ngcontent-kru-c76="">Overtime Hours <span _ngcontent-kru-c76="" class="text-danger">*</span></label>
+						<div _ngcontent-kru-c76="" class="cal-icon">
+							<input   style="width:auto" [(ngModel)]="overtime_hours" name="number" type="number"   class="form-control ">
+							<!---->
+							<!---->
+						</div>
+					</div>
+					<div _ngcontent-kru-c76="" style="position: absolute;top: 112px;left: 271px;" class="form-group">
+						<label _ngcontent-kru-c76="">Overtime Minutes <span _ngcontent-kru-c76="" class="text-danger">*</span></label>
+						<div  class="cal-icon">
+							<input style="width:auto" [(ngModel)]="overtime_mins" name="Minutes" type="number"   class="form-control">
+							<!---->
+							<!---->
+						</div>
+					</div>
+					<div _ngcontent-kru-c76="" class="form-group">
+						<label _ngcontent-kru-c76="">Description <span _ngcontent-kru-c76="" class="text-danger">*</span></label>
+						<textarea [(ngModel)]="description" name="Description" rows="4" formcontrolname="Description" class="form-control ng-untouched ng-pristine ng-invalid"></textarea>
+						<!---->
+					</div>
+					<div _ngcontent-kru-c76="" class="submit-section">
+						<button _ngcontent-kru-c76="" type="submit" (click)="submitt()" class="btn btn-primary submit-btn">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -30,7 +30,7 @@ export class LoginComponent{
             {
               this.emp=data;
               alert("Login Successfully");
-              this.route.navigate(['/Attendance(Employee)']);
+              this.route.navigate(['/Overtime']);
 
               localStorage.setItem("Logindetail",JSON.stringify(this.emp))
             }

@@ -9,9 +9,9 @@
                     <div class="row">
                         <div class="col">
                             
-                            <h2 class="card-title">Timesheet<span class="clr-grey"> {{getdate}}</span></h2>
+                            <h5 class="card-title">Timesheet<span class="clr-grey"> {{getdate}}</span></h5>
                             <div class="punch-det">
-                                <h5>Punch In at</h5>
+                                <h6 >Punch In at</h6>
                                 <p>{{punch_in}} {{time | date:'hh:mm a'}}</p>
                             </div>
 
@@ -19,13 +19,13 @@
                             <button class="btn-punchin" [style.display]="hide?'block':'none'" (click)="punchin()">Punch In</button>
                             <button class="btn" [style.display]="hide?'none':'block'" (click)="punchout()">Punch Out</button>
                             <div class="d-flex spc-btw">
-                                <div class="stats-box">
-                                    <p>Break</p>
-                                    <h4>{{ break | number : '1.2-2' }} hrs</h4>
-                                </div>
-                                <div class="stats-box">
-                                    <p>Break</p>
-                                    <h4>1.21 hrs</h4>
+                                <div style="margin-left: 88px;" class="stats-box">
+                                    <b><p style="margin: 0;font-size: 12px;">Break</p>
+                                    <h6 style="margin: 0;font-size: 12px;">{{ break | number : '1.2-2' }} hrs</h6>
+                                </b></div>
+                                <div hidden class="stats-box">
+                                   <b> <p style="margin: 0;font-size: 12px;">Break</p>
+                                    <h4 style="margin: 0;font-size: 12px;">1.21 hrs</h4></b>
                                 </div>
 
                                 
@@ -85,15 +85,15 @@
                             <ul class="Activity-list">
                                 <ng-container *ngFor="let item of activity" >
                                     <li *ngIf="item.punch_in!=null">
-                                        <p>Punch In at</p>
-                                        <p class="d-flex" >
+                                        <p style="font-weight: 500;">Punch In at</p>
+                                        <p class="d-flex" style="color: #bbb;font-weight: 500;    font-size: 12px;" >
                                             <img src="../../../../assets/images/clock.png"> 
                                             {{item.punch_in | date:'hh:mm a'}}
                                          </p>
                                     </li>
                                     <li *ngIf="item.punch_out!=null">
-                                        <p>Punch Out at</p>
-                                        <p class="d-flex" >
+                                        <p style="font-weight: 500;">Punch Out at</p>
+                                        <p class="d-flex" style="color: #bbb;font-weight: 500;    font-size: 12px;">
                                             <img src="../../../../assets/images/clock.png"> 
                                             {{item.punch_out | date:'hh:mm a'}}
                                          </p>
@@ -154,14 +154,15 @@
                     
         <table  class="custom-table">
             <thead>
-                <tr>
+                <tr style="background-color: #a9a9a9;">
                     <th>#</th>
                     <th>Date</th>
                     <th>Punch in</th>
-                    <th>punch out</th>
+                    <th>Punch out</th>
                     <th>Production</th>
                     <th>Break</th>
                     <th>Overtime</th>
+                    <th>view activity</th>
 
                 </tr>
             </thead>
@@ -174,14 +175,57 @@
                     <td>{{ item.production_hours | number : '1.2-2' }} hrs</td>
                     <td>{{ item.break_hours | number : '1.2-2' }} hrs</td>
                     <td>0</td>
+                    <td><button class="btn-view" (click)="getactivity(item.date)">view</button></td>
 
                 </tr>
-               
+          
             </tbody>
         </table>
+        <nav style="width: 949px;" aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item" >
+                <button class="page-link" style="font-weight:600;"  [style.color]="(pageindex+1)==totalNoOfPages?'#888':'#ff9b44'" (click)="GetPreviousRecord()" [disabled]="pageindex==0" tabindex="-1">Previous</button>
+              </li>
+              <li class="page-item" (click)="onIndexChanged(i)" [ngClass]="(i)== pageindex? 'active' : ''" *ngFor="let item of [].constructor(totalNoOfPages);let i=index;"><a class="page-link">{{(i+1)}}</a></li>
+              <li class="page-item">
+                <button class="page-link" style="font-weight:600;"  [style.color]="(pageindex+1)==totalNoOfPages?'#888':'#ff9b44'" (click)="GetNextRecord()" [disabled]="pageindex==totalNoOfPages">Next</button>
+              </li>
+            </ul>
+          </nav>
     </div>
+  
 </div>
     
-   
+ <!-- Activity history detail -->
+<div [style.Display]="view1?'none':'block'"  class="fade-show">
+    <div  class="add-leave-form">
+        <img (click)="view1=!view1" src="../../../../../assets/images/cross.png" class="dots">
+
+  
+        <div class="col">
+            <h2>{{datestring}} Activity</h2>
+            <ul class="Activity-list">
+                <ng-container *ngFor="let item of date_wise_activity" >
+                    <li *ngIf="item.punch_in!=null">
+                        <p>Punch In at</p>
+                        <p class="d-flex" style="padding-left: 20px;color: #bbb;font-weight: 500;">
+                            <img src="../../../../assets/images/clock.png" style="left: 0px;bottom: 50px;top: 50px;right: 0px;width: 20px;  "> 
+                            {{item.punch_in | date:'hh:mm a'}}
+                         </p>
+                    </li>
+                    <li *ngIf="item.punch_out!=null">
+                        <p>Punch Out at</p>
+                        <p class="d-flex"style="padding-left: 20px;color: #bbb;font-weight: 500;">
+                            <img src="../../../../assets/images/clock.png" style="left: 0px;bottom: 50px;top: 50px;right: 0px;width: 20px;  "> 
+                            {{item.punch_out | date:'hh:mm a'}}
+                         </p>
+                    </li>
+                </ng-container>
+               
+            </ul>
+        </div>
+
+    </div>
+</div>
 
 

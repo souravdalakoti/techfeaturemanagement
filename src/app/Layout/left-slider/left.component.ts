@@ -13,7 +13,7 @@ export class LeftComponent{
   subMenu:any=[
  /*Dashboard-->*/{name:'AdminDashboard',path:"",SideBarMenu:1},{name:'EmployeeDashboard',path:"",SideBarMenu:1},
   /*Apps-->*/{name:'Chats',path:"",SideBarMenu:2}, {name:'Call',path:"",SideBarMenu:2},{name:'Calendar',path:"",SideBarMenu:2},{name:'Contacts',path:"",SideBarMenu:2},{name:'Email',path:"",SideBarMenu:2},{name:'File Manager',path:"",SideBarMenu:2},
-  /*Employees-->*/{name:'All Employees',path:"/Employees",SideBarMenu:3},{name:'Holidays',path:"/Holidays",SideBarMenu:3},{name:'Leaves(Admin)',path:"/Leaves(Admin)",SideBarMenu:3},{name:'Leaves(Employees)',path:"/Leaves(Employees)",SideBarMenu:3},{name:'Attendance(Admin)',path:"/Attendance(Admin)",SideBarMenu:3},{name:'Attendance(Employee)',path:"/Attendance(Employee)",SideBarMenu:3},
+  /*Employees-->*/{name:'All Employees',path:"/Employees",SideBarMenu:3},{name:'Holidays',path:"/Holidays",SideBarMenu:3},{name:'Leaves(Admin)',path:"/Leaves(Admin)",SideBarMenu:3},{name:'Leaves(Employees)',path:"/Leaves(Employees)",SideBarMenu:3},{name:'Attendance(Admin)',path:"/Attendance(Admin)",SideBarMenu:3},{name:'Attendance(Employee)',path:"/Attendance(Employee)",SideBarMenu:3},{name:'Overtime',path:"/Overtime",SideBarMenu:3},
   /*Projects-->*/ {name:'Projects',path:"",SideBarMenu:4},{name:'Task',path:"",SideBarMenu:4},
   /*Sales-->*/{name:'Payments',path:"",SideBarMenu:5},{name:'Invoice',path:"",SideBarMenu:5}
  
