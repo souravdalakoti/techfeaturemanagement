@@ -17,7 +17,7 @@ export class ProfileComponent{
 
     constructor(private service:EmployeeService,private router: ActivatedRoute){}
     ngOnInit(){
-      
+        
     
         
          

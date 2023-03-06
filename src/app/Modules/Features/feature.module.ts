@@ -14,7 +14,7 @@ import { FeatureComponent } from './feature.component';
  FeatureRoutingModule,RouterModule
   
   ],
-  providers: [EmployeeService],
+  providers: [],
   bootstrap: []
 })
 export class FeatureModule {}

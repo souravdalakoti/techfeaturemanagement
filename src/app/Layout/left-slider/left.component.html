@@ -8,7 +8,7 @@
             <div (click)="slide.IsShow=!slide.IsShow"><img src="../../../assets/images/edit.png" >{{slide.name}} <img *ngIf="slide.IsSubmenu" src="../../../assets/images//icon2.png" [style.transform]="slide.IsShow?'':'rotate(90deg)'"  class="dropdown" ></div>
            <span *ngIf="slide.IsSubmenu">
             <ul  [style.display]="slide.IsShow?'none':'block'" class="Employees-popup">
-                <li  *ngFor="let sub of subMenu | Title:slide.SideBarMenu:slide.IsShow" style="padding-left: 50px">
+                <li  *ngFor="let sub of subMenu | Title:slide.SideBarMenu:slide.IsShow" style="padding-left: 10px">
                     <a [routerLink]="sub.path" >{{sub.name}}</a>
                 </li>
            </ul>

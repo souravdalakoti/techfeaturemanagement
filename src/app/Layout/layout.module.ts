@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout.component';
 import { LeftComponent } from './left-slider/left.component';
 import { NavComponent } from './navbar/nav.component';
 import { EmployeeService } from '../Modules/shared/services/employee.service';
+import {TFCoachingclassService} from '../Modules/shared/services/TFCoachingclass.services';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { EmployeeService } from '../Modules/shared/services/employee.service';
    LayoutRoutingModule,RouterModule,CommonModule
    
   ],
-  providers: [AuthGuard,EmployeeService],
+  providers: [AuthGuard,EmployeeService,TFCoachingclassService],
   bootstrap: []
 })
 export class LayoutModule { }

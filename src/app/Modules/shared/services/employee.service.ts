@@ -12,7 +12,8 @@ export class EmployeeService{
    private readonly apiController: string = 'Employee';
 
    constructor(private api: HttpService) { }
- GetEmployeeDetails(){
+ 
+   GetEmployeeDetails(){
   
      return this.api.get(this.apiController + "/GetEmployeeDetail");
  }
@@ -32,9 +33,9 @@ export class EmployeeService{
 
       return this.api.get(this.apiController +"/GetEmployeeByDesignation?designation_id="+id)
     }
-    Search_Empname_empid(param:string){
+    searchEmp_Empname_empid(searchname:string,designation_id:any){
 
-      return this.api.get(this.apiController +"/Search_Empname_empid?param="+param)
+      return this.api.get(this.apiController +"/searchEmp_Empname_empid?searchname="+searchname+ "&designation_id="+designation_id)
     }
     GetEmployeeDetailById(id:number){
 

@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" routerLink="createinvoice" >Create Invoice</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Invoice_Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cust">
+            <th scope="row">{{item.invoice_id}}</th>
+            <td>{{item.invoice_date | date:'d MMM, y'}}</td>
+            <td>{{item.invoice_from_name}} </td>
+            <td>{{item.invoice_to_name}} </td>
+            <td>
+                <button class="btn btn-success" type="button"  (click)="Generatepdf(item.invoice_id)">Download Invoice</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- ------------------------------------------------------------ -->
+

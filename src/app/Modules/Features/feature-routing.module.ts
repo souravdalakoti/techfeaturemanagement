@@ -21,6 +21,10 @@ const routes: Routes = [
       { path: 'Leaves(Employees)',loadChildren: () => import('./Employees/Leave(Employee)/employee.module').then(module=>module.LeaveEmployeeModule),data: { title: 'Attendance(Admin)' } },
       { path: 'Overtime',loadChildren: () => import('./Employees/Overtime/overtime.module').then(module=>module.OvertimeModule),data: { title: 'Overtime' } },
       { path: 'profile',loadChildren: () => import('./profile/profile.module').then(module=>module.ProfileModule),data: { title: 'Attendance(Admin)' } },
+      { path: 'TFCoachingclass',loadChildren: () => import('./TFCoachingclass/TFCoachingTrainee.module').then(module=>module.TFCoachingTraineeModule),data: { title: 'TFCoachingclass' } },
+      {path:'TFEmployee',loadChildren:()=>import('./TFCoachingclass/TFEmployee/TFEmployee.module').then(module=>module.TFEmployeeModule),data:{title:'TFEmployee'}},
+      {path:'TFInvoice',loadChildren:()=>import('./TF-invoice/tfinvoice.module').then(module=>module.TFInvoiceModule),data:{title:'TFInvoice'}},
+      
       { path: 'message-admin',loadChildren: () => import('./Employees/Messages/Admin/message-admin.module').then(module=>module.MessageAdminModule),data: { title: 'Admin-Message' } },
       { path: 'message-employee',loadChildren: () => import('./Employees/Messages/Employee/message-employee.module').then(module=>module.MessageEmployeeModule),data: { title: 'Employee-Message' } },
     ]

@@ -16,10 +16,11 @@ import { ErrorInterceptor } from './Modules/shared/auth/error.interceptor';
 import { AuthService } from './Modules/shared/services/auth.service';
 import { HttpService } from './Modules/shared/services/http.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,RegisterComponent
-  ],
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,CommonModule,HttpClientModule,FormsModule,NgbModule
