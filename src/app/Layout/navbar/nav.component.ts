@@ -30,7 +30,7 @@ export class NavComponent{
            
           }
           else{
-            this.emp='';
+            this.route.navigate(['Auth/Login'])
           }
           })
     }

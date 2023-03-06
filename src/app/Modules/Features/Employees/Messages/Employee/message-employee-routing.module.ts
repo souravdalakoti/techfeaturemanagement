@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AdminAttendanceComponent } from './attendance(admin).component';
+import { MessageEmployeeComponent } from './message-employee.component';
 
 
 
 
 
 const routes: Routes = [
-{path:'',component:AdminAttendanceComponent}
+{path:'',component:MessageEmployeeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminAttendanceRoutingModule { }
+export class MessageAdminRoutingModule { }

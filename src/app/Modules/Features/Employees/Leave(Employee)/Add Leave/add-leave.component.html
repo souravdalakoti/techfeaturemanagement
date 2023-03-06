@@ -1,0 +1,87 @@
+
+ <div [style.display]="view?'none':'block'" class="add-leave-form">
+            <img (click)="close()" src="../../../../../assets/images/cross.png" class="dots">
+            <h1>Add leave</h1>
+            <div>
+                <h5>leave type <sup>*</sup></h5>
+                <div class="form-feild">
+                    <select class="w-100" [(ngModel)]="leave_type_id" (change)="changing_leave_type()">
+                        <option value="0" disabled>Select Leave Type</option>
+                        <option *ngFor="let item of leavetype" [value]="item.leave_type_id">{{item.leave_type_name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <h5>leave duration<sup>*</sup></h5>
+                <div class="form-feild">
+                    <select class="w-100"  [(ngModel)]="days_duration_type">
+                        <option value="0" disabled>Select leave duration</option>
+                        <option value="1">half day</option>
+                        <option value="2">1 day</option>
+                        <option value="3">more than 1 day</option>
+                    </select>
+                </div>
+            </div>
+            <h5 *ngIf="this.days_duration_type==1||this.days_duration_type==2">Date<span>*</span></h5>
+            <h5 *ngIf="this.days_duration_type==3">From<span>*</span></h5>
+            <div  style="border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px ;" [style.width]="this.days_duration_type==3?'236px!important':'100%!important'" *ngIf="this.days_duration_type==1 || this.days_duration_type==3||this.days_duration_type==2" class="w-100 form-feild"> 
+                <input  [(ngModel)]="date_from" type="" placeholder=" yyyy-mm-dd"  ngbDatepicker #d="ngbDatepicker">
+                <img _ngcontent-hle-c113="" (click)="d.toggle()" src="../../../../assets/images/celendr-icon.png">
+            </div>
+            <h5 style=" position: relative;bottom: 81px;left: 274px;" *ngIf="this.days_duration_type==3">To<span>*</span></h5>
+            <div style="border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px ;width: 236px!important;bottom: 80px;left: 273px;margin-top: 0px!important;margin-bottom: 0px!important;" *ngIf="this.days_duration_type==3" class="w-100 form-feild"> 
+                <input [(ngModel)]="this.date_to" type="" placeholder=" yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+                <img _ngcontent-hle-c113=""   (click)="d.toggle()" src="../../../../assets/images/celendr-icon.png">
+            </div>
+          
+            <div [style.display]="this.days_duration_type==1 && this.date_from.year?'block':'none'" style="position:absolute;left:53px;" class="form-check">
+                <input [disabled]="halfday2?'true':'false'" [(ngModel)]="halfday1" style="margin-top:4px;" class="form-check-input" type="checkbox" name="checkbox" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1" >
+                  first half
+                </label>
+              </div>
+              <div style="position:absolute;left:236px;" [style.display]="this.days_duration_type==1 && this.date_from.year?'block':'none'" class="form-check">
+                <input [disabled]="halfday1?'true':'false'" [(ngModel)]="halfday2" style="margin-top:4px;"  class="form-check-input" type="checkbox"   name="flexRadioDefault" id="flexRadioDefault2" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                  second half
+                </label>
+              </div>
+              <div [style.display]="this.days_duration_type==3 && this.date_from.year!=null && this.date_to.year!=null?'block':'none'" class="" style="margin-top: 12px;margin-left: 4px;width: 166px; top: 341px;position: absolute;">
+                <input  style="margin-left: 0px;margin-right: 7px;margin-top: 3px;" class="form-check-input" type="checkbox" value="" [(ngModel)]="halfdayincluded" id="flexCheckDefault">
+                <label style="font-weight: 700;color: darkgray;"class="form-check-label" for="flexCheckDefault">
+                  Is half day included 
+                </label>
+              </div>
+              <span *ngIf="this.days_duration_type==3 &&  this.date_from.year!=null && this.date_to.year!=null?morethanone():''"></span>
+              <span *ngIf="this.days_duration_type==1 &&  this.date_from.year!=null?halfday():''"></span>
+              <span *ngIf="this.days_duration_type==2 &&  this.date_from.year!=null?fullday():''"></span>
+       <div [style.display]="this.days_duration_type==3 && halfdayincluded && this.date_from.year!=null && this.date_to.year!=null?'block':'none'" class="fff" style=" top: 351px;position: absolute;">
+       <div  class="form-check form-check-inline">
+        <input [checked]="included?'':0"  [(ngModel)]="this.firsthalf1"  style="border-radius: 1.25em;margin-top: 4px;" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">FIRST HALF {{date_from.year}}/{{date_from.month}}/{{date_from.day}}</label>
+      </div>
+      <div *ngIf="this.days_duration_type==3 && halfdayincluded && this.date_to.year!=null && this.date_to.year!=null" style="position: absolute;right: 0px;left: 0px;width: 174px;top: 25px;" class="form-check form-check-inline">
+        <input [(ngModel)]="this.secondhalf1" style="border-radius: 1.25em;margin-top: 4px;" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">SECOND HALF {{date_to.year}}/{{date_to.month}}/{{date_to.day}}</label>
+      </div>
+    </div>   
+  
+                <p [style.margin-top]="days_duration_type==1 && this.date_from.year!=null?'47px':'14px'">Number of Days<span>* -</span></p>
+                <label style="position:absolute;left:170px;" [style.top]="days_duration_type==1 && this.date_from.year!=null?'369px':'415px'" [style.display]="this.date_from.year!=null && this.date_to.year!=null && days_duration_type==3?'block':'none'">{{number_of_days}}</label>
+               <label style="position:absolute;left:170px;" [style.top]="days_duration_type==1 && this.date_from.year!=null?'369px':'402px'" [style.display]="this.date_from.year!=null  && days_duration_type==1 ?'block':'none'">{{number_of_days}}</label>
+               <label style="position:absolute;left:170px;top: 337px;" [style.display]="this.date_from.year!=null && days_duration_type==2?'block':'none'">{{number_of_days}}</label>
+         
+            <div>
+                <p style="margin-top: 9px;">Leave Reason<span>*</span></p>
+                <div     style="height: 156px;" class="form-feild">
+                    <textarea rows="10" [(ngModel)]="reason" [value]="reason"></textarea>
+                </div>
+            </div>
+            <div>
+                <button style="margin-top: 70px;margin-left: 171px;color:white" class="leave-frm-btn" (click)="Submitt()">Submit</button>
+            </div>
+         
+        </div>
+        
+   
+     

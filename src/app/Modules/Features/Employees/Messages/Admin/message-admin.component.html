@@ -1,0 +1,12 @@
+<div class="main">
+  <label>Message</label>
+  <textarea [(ngModel)]="messages" class="form-control w-25"></textarea>
+  <button [disabled]="!messages" class="btn btn-primary mt-2" (click)="Send()">Send</button>
+  <div class="mt-2" *ngIf="msg && msg.length!=0" >
+    <ul *ngFor="let item of msg">
+  
+        <small>{{item.msg}}</small>
+ 
+    </ul>
+  </div>
+</div>

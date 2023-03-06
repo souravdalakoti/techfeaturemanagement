@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.left-slider {
+  position: fixed;
+  top: 60px;
+  background: #34444c;
+  height: 100vh;
+  width: 250px;
+  left: 0px;
+  overflow: auto;
+  z-index: 99;
+}
+
+.left-slider ul {
+  padding: 20px 0;
+}
+
+.left-slider ul li {
+  padding: 8px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.left-slider img {
+  height: 15px;
+  padding-right: 10px;
+}
+
+.Employees {
+  display: block;
+  justify-content: space-between;
+}
+
+.Employees-popup {
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.Employees-li {
+  padding-left: 50px;
+}
+
+.material-icons {
+  position: fixed;
+  left: 15px;
+  display: none;
+  top: 20px;
+  color: white;
+  font-size: 25px;
+  z-index: 99;
+}
+
+#check:checked ~ .left-slider {
+  left: 0px;
+}
+
+@media (max-width: 992px) {
+  .left-slider {
+    left: -250px;
+  }
+  .material-icons {
+    display: block;
+  }
+}/*# sourceMappingURL=left.component.css.map */

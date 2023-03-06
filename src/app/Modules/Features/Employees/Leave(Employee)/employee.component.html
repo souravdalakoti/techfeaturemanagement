@@ -1,0 +1,173 @@
+<!-- //here -->
+<div class="content">
+  <div [style.Display]="view?'none':'block'" class="fade-show">
+    <add-leave-employee [view]="view" (hide)="hidemodal($event)"></add-leave-employee>
+  </div>
+  <div class="page-header d-flex justify-btw">
+    <div>
+      <h1>Leaves</h1>
+      <ul class="d-flex">
+        <li>Dashboard</li>
+        <li class="clr-gry"> / Leaves</li>
+      </ul>
+    </div>
+    <div>
+      <button (click)="view=!view">+ Add Leave</button>
+    </div>
+  </div>
+  <div class="row d-flex justify-btw wrap">
+    <div class="col-md-3">
+      <div class="stats-info">
+        <h6>Casual /Earn Leave</h6>
+        <h4>{{duration_type.earnleave}}</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stats-info">
+        <h6>Medical Leave</h6>
+        <h4>{{duration_type.medicalleave}}</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stats-info">
+        <h6>Other Leave</h6>
+        <h4>{{duration_type.otherleave}}</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stats-info">
+        <h6>Remaining Leave</h6>
+        <h4>{{duration_type.remainingleave}}</h4>
+      </div>
+    </div>
+  </div>
+  <!-- entreis........................................................ -->
+  <div class="entries">
+    <label> show <select [(ngModel)]="pagesize" (change)="GetemployeeLeaveRecord()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select> entries </label>
+  </div>
+  <!-- data table............................................................. -->
+  <div class="data-table">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Leave Type</th>
+          <th>From</th>
+          <th>To</th>
+          <th>No of Days</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Approved by</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of leave_record">
+          <td>{{item.series_number}}</td>
+          <td>{{item.leave_type_name}}</td>
+          <td>{{item.date_from}}</td>
+          <td>{{item.date_to}}</td>
+          <td>{{item.days_duration}}</td>
+          <td>{{item.reason}}</td>
+          <td>
+            <div class="box-i d-flex">
+              <img scr="../../../../assets/images/">
+                <p>{{item.status_name}}</p>
+            </div>
+          </td>
+          <td class=" profile-td d-flex">
+            <img src="../../../../assets/images/Name_Icon-01.png">
+            <p>John Smith</p>
+          </td>
+          <td>
+            <div class="dropdown-i-container" tabindex="-1">
+              <div class="three-dots"></div>
+              <div class="dropdown-i">
+                <div (click)="view=!view">Edit <div [style.Display]="view?'none':'block'" class="fade-show">
+                    <div class="add-leave-form">
+                      <img (click)="view=false" src="../../../../../assets/images/cross.png" class="dots">
+                      <h1>Edit leave</h1>
+                      <div>
+                        <p>leave type <sup>*</sup>
+                        </p>
+                        <div class="form-feild">
+                          <select class="w-100">
+                            <option>Select Leave Type</option>
+                            <option>Casual Leave</option>
+                            <option>Medical Leave</option>
+                            <option>Loss of Pay</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <p>From <sup>*</sup>
+                        </p>
+                        <div class="w-100 form-feild">
+                          <input type="text" required />
+                          <img src="../../../../assets/images/celendr-icon.png">
+                        </div>
+                      </div>
+                      <div>
+                        <p>To <sup>*</sup>
+                        </p>
+                        <div class="w-100 form-feild">
+                          <input type="" />
+                          <img src="../../../../assets/images/celendr-icon.png">
+                        </div>
+                      </div>
+                      <div>
+                        <p>Number of Days <sup>*</sup>
+                        </p>
+                        <div class="w-100 form-feild">
+                          <input type="">
+                        </div>
+                      </div>
+                      <div>
+                        <p>Remaining leaves <span>*</span>
+                        </p>
+                        <div class="w-100 form-feild">
+                          <input type="text">
+                        </div>
+                      </div>
+                      <div>
+                        <p>Leave Reason <span>*</span>
+                        </p>
+                        <div class="form-feild">
+                          <textarea rows="5"></textarea>
+                        </div>
+                      </div>
+                      <div class="leave-frm-btn">
+                        <a href="#">Submit</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>Delete</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="data-table-info">showing {{pagesize*pageindex+1}} to {{pagesize*pageindex+this.leave_record.length}} of {{this.leave_record[0].totalrecords}} entries</div>
+    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+      <ul class="pagination">
+        <li class="paginate_button page-item previous  " id="DataTables_Table_0_previous">
+          <button class="page-link" [style.color]="pageindex==0?'#888':'#ff9b44'" style="font-weight:600" (click)="GetPreviousRecord()" [disabled]="pageindex==0" tabindex="-1">Previous</button>
+        </li>
+        <li class="paginate_button page-item " (click)="onIndexChanged(i)" [ngClass]="(i)== pageindex? 'active' : ''" *ngFor="let item of [].constructor(totalNoOfPages);let i=index;">
+          <a class="page-link">{{i+1}}</a>
+        </li>
+        <li class="paginate_button page-item next " id="DataTables_Table_0_next">
+          <button style="font-weight:600;" [style.color]="(pageindex+1)==totalNoOfPages?'#888':'#ff9b44'" class="page-link" (click)="GetNextRecord()" [disabled]="(pageindex+1)==totalNoOfPages">Next</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

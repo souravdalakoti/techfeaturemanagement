@@ -15,23 +15,25 @@ export class DetailComponent{
        emp:any=[];
        image:string='';
        number:number=0;
+       doj:any;
     constructor(private serive:EmployeeService,private router: ActivatedRoute){}
 
     ngOnInit(){
-       
+      
         this.router.params.subscribe(params=>{
 
             this.id=params;
         })
          this.number=Number(this.id.id)
          this.serive.GetEmployeeDetailById(this.number).subscribe((data)=>{
-            
+           
             if(data!=null && data!=0)
             {
           
-             
+              debugger
               this.emp='';
               this.emp=data;
+              
             
              
             }

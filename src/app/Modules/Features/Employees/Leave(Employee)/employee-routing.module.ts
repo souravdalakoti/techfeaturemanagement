@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LeaveEmployeeComponent } from './leave(employee).component';
+import { LeaveEmployeeComponent } from './employee.component';
 
 
 

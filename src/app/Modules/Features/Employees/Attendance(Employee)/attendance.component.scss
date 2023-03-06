@@ -33,6 +33,7 @@ ul li {
 
 .clr-grey {
   color: #565353;
+  font-size: .875em;
 }
 
 /*main sec......................................................................................................................*/
@@ -184,7 +185,7 @@ ul li {
 }
 
 .stats-box {
-  width: 230px;
+  width: 133px;
   height: 45px;
   text-align: center;
   padding: 3px;
@@ -337,9 +338,6 @@ ul li {
   box-shadow: 0 0 3px #e5e5e5;
 }
 
-.custom-table tbody tr:first-child {
-  background-color: #a9a9a9;
-}
 
 .custom-table thead tr th {
   padding: 20px;
@@ -376,4 +374,166 @@ ul li {
   border: 1px solid #44ff7c;
   color: white;
   margin: 30px auto;
-}/*# sourceMappingURL=attendance.component.css.map */
+}
+.btn-view {
+    margin-top: 0px;
+    padding-left: 14px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 33px;
+    margin-bottom: 2px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    height: 30px;
+    /* max-width: 100%; */
+    margin: auto;
+    display: inherit;
+    
+    background: rgb(0, 4, 255);
+    background-color: #4466ff;
+    border: 1px solid #4476ff;
+    color: white;
+   
+  }
+
+  .fade-show {
+    padding: 30px;
+  background-color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: none;
+    overflow-y: auto;
+    outline: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
+
+  .add-leave-form {
+    padding: 30px;
+  background-color: #f7f7f7;
+    position: absolute;
+    width: 600px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background: white;
+    padding: 30px;
+    z-index: 2;
+    left: 30%;
+    top: 20px;
+  }
+  add-leave-form {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .add-leave-form ul li {
+    margin: 15px 0;
+  }
+  
+  .add-leave-form .form-feild {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    position: relative;
+    height: 44px;
+  }
+  
+  .add-leave-form ul li:last-child .form-feild {
+    height: 80px;
+  }
+  .w-100 {
+    width: 100%;
+  }
+
+  .form-feild input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+  }
+  
+  .form-feild textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+  }
+  
+  .form-feild select {
+    height: 100%;
+    outline: none;
+  }
+  
+  .add-leave-form img {
+    width: 30px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+  }
+  
+  .add-leave-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+  .leave-frm-btn {
+    text-align: center;
+    margin: 40px auto 0;
+    width: 200px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 200px;
+    padding: 10px 20px;
+    background-color: #ff9b44;
+    border: 1px solid #ff9b44;
+  }
+  
+  .leave-frm-btn a {
+    color: white;
+  }
+  .data-table-info {
+    padding-top: 15px;
+    font-size: 18px;
+  }
+  
+  .paging-num ul {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    max-width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .paging-num{
+    top: 302px;
+    left: 677px;
+    position: sticky;
+    padding-left: 10px;
+    margin-bottom: 16px;
+  }
+  .paging-num ul li {
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  .paging-num a {
+    color: #6c757d;
+  }
+  
+  .paging-num ul .num a {
+    color: white;
+  }
+  .num {
+    background-color: #ff9b44;
+    border-color: #ff9b44;
+    padding: 5px 16px !important;
+  }
+  .data-table {
+   
+    padding: 40px 0;
+    position: relative;
+  }
