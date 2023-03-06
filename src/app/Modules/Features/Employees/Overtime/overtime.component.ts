@@ -57,7 +57,7 @@ getemployeeovertimerecord(){
         {
             
             this.overtime_record=result;
-            if(this.overtime_record!=[])
+            if(this.overtime_record)
             {
                 debugger        
             this.totalNoOfPages = Math.ceil(this.overtime_record[0].totalcountofpage / this.pagesize);

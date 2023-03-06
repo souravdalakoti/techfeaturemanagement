@@ -3,16 +3,6 @@
     <div [style.Display]="view?'none':'block'" class="fade-show" >
         <add-overtime [view]="view" (hide)="hidemodal($event)"></add-overtime>
     </div>
-        
-       
-    
-
-   
-
-   
-
-
-
     <div class="page-header d-flex justify-btw">
         <div>
             <h1>Overtime</h1>
@@ -162,7 +152,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>Delet</div>
+                                <div>Delete</div>
                             </div>
                         </div>
                     </td>
@@ -170,7 +160,7 @@
                 
             </tbody>
         </table>
-        <div class="data-table-info">showing {{pagesize*pageindex+1}} to {{pagesize*pageindex+this.overtime_record.length}}  of {{this.overtime_record[0].totalcountofpage}} entries</div>
+        <!-- <div class="data-table-info">showing {{pagesize*pageindex+1}} to {{pagesize*pageindex+this.overtime_record.length}}  of {{this.overtime_record[0].totalcountofpage}} entries</div>
         <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
             <ul class="pagination">
       
@@ -178,8 +168,7 @@
                 <li class="paginate_button page-item " (click)="onIndexChanged(i)" [ngClass]="(i)== pageindex? 'active' : ''" *ngFor="let item of [].constructor(totalNoOfPages);let i=index;"><a class="page-link">{{i+1}}</a></li>
                 <li class="paginate_button page-item next " id="DataTables_Table_0_next"> <button style="font-weight:600;"  [style.color]="(pageindex+1)==totalNoOfPages?'#888':'#ff9b44'"  class="page-link" (click)="GetNextRecord()" [disabled]="(pageindex+1)==totalNoOfPages">Next</button></li>
             </ul>
-        </div>
-   
+        </div> -->
 
     </div>
 </div>
