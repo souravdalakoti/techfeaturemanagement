@@ -1,0 +1,187 @@
+<div class="mb-3">
+    <button type="button" class="btn btn-primary mt-2" (click)="GetClientDetails()">Add +</button>
+
+</div>
+<div class="card-widget">
+    <div class="table-responsive">
+        <table class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>City Name</th>
+                    <th>Country Name</th>
+                    <th>Status Name</th>
+                    <th>Address</th>
+                    <th>Mobile No</th>
+                    <th>E-Mail</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of AllClient">
+            <tr>
+              <td>{{item.client_name}}</td>
+              <td>{{item.city}}</td>
+              <td>{{item.country_name}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.address}}</td>
+              <td>{{item.mobile_no}}</td>
+              <td>{{item.email}}</td>
+              <td>
+                <button type="button" class="ml-2 btn btn-primary" (click)="EditClientDetails(item.client_id)">Edit</button>
+                <button type="button" class="ml-2 btn btn-primary"(click)=deleteclientById(item.client_id)>Delete</button>
+              </td>
+            </tr>
+          </ng-container>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Start Add Pupop -->
+    <div *ngIf="is_save" class="add-leave-form">
+        <img (click)="is_save=false" src="../../../../../assets/images/cross.png" class="dots">
+        <h1>Add Client</h1>
+        <div>
+            <h5>Client Name <sup>*</sup></h5>
+            <div class="form-feild">
+                <input type="text" [(ngModel)]="client_name" />
+            </div>
+        </div>
+        <h5>Country<span>*</span></h5>
+        <div class="form-feild">
+            <select class="w-100" [(ngModel)]="country_id">
+                <option value="0" disabled>Select Country</option>
+                <option *ngFor="let item of all_countries" [value]="item.country_id">{{item.country_name}}</option>
+
+            </select>
+        </div>
+        <div>
+            <h5>State<sup>*</sup></h5>
+            <div class="form-feild">
+                <select class="w-100" [(ngModel)]="state_id">
+                    <option value="0" disabled>Select State</option>
+                    <option *ngFor="let item of all_status" [value]="item.state_id">{{item.name}}</option>
+
+                </select>
+            </div>
+        </div>
+        <div>
+            <h5>City<sup>*</sup></h5>
+            <div class="form-feild">
+                <select class="w-100" [(ngModel)]="city_id">
+                    <option value="0" disabled>Select City</option>
+                    <option *ngFor="let item of all_cities" [value]="item.city_id">{{item.city}}</option>
+
+                </select>
+            </div>
+        </div>
+        <div>
+            <h5>Address<sup>*</sup></h5>
+            <div>
+                <textarea type="textarea" [(ngModel)]="address" rows="7" cols="75"> 
+               </textarea>
+            </div>
+        </div>
+        <div>
+            <h5>Mobile No <sup>*</sup></h5>
+            <div class="form-feild">
+                <input type="text" [(ngModel)]="mobile_no" />
+            </div>
+        </div>
+        <div>
+            <h5>Altemate Mobile No <sup>*</sup></h5>
+            <div class="form-feild">
+                <input type="text" [(ngModel)]="altemate_mobile_no" />
+            </div>
+        </div>
+        <div>
+            <h5>E-Mail <sup>*</sup></h5>
+            <div class="form-feild">
+                <input type="text" [(ngModel)]="e_mail" />
+            </div>
+        </div>
+        <h5>GST<span>*</span></h5>
+        <div class="form-feild">
+            <select class="w-100" [(ngModel)]="gst">
+                <option value="0" disabled>Select Gst</option>
+                <option *ngFor="let item of all_Gst" [value]="item.gst">{{item.gst}}</option>
+
+            </select>
+        </div>
+        <div>
+            <h5>Pan No <sup>*</sup></h5>
+            <div class="form-feild">
+                <input type="text" [(ngModel)]="pan_no" />
+            </div>
+        </div>
+        <button style="margin-top: 70px;margin-left: 171px;color:white" class="leave-frm-btn"
+        (click)="Saveclientdetails()">Submit</button>
+    </div>
+
+</div>
+
+<!-- End Add Pupop -->
+
+
+<!--start edit pupop -->
+
+<div *ngIf="is_edit" class="add-leave-form">
+    <img (click)="is_edit=false" src="../../../../../assets/images/cross.png" class="dots">
+    <h1>Update Client</h1>
+    <div>
+        <h5>Client Name <sup>*</sup></h5>
+        <div class="form-feild">
+            <input type="text" [(ngModel)]="client_name" />
+        </div>
+    </div>
+    <h5>Country<span>*</span></h5>
+    <div class="form-feild">
+        <select class="w-100" [(ngModel)]="country_id">
+            <option value="0" disabled>Select Country</option>
+            <option *ngFor="let item of all_countries" [value]="item.country_id">{{item.country_name}}</option>
+
+        </select>
+    </div>
+    <div>
+        <h5>State<sup>*</sup></h5>
+        <div class="form-feild">
+            <select class="w-100" [(ngModel)]="state_id">
+                <option value="0" disabled>Select State</option>
+                <option *ngFor="let item of all_status" [value]="item.state_id">{{item.name}}</option>
+
+            </select>
+        </div>
+    </div>
+    <div>
+        <h5>City<sup>*</sup></h5>
+        <div class="form-feild">
+            <select class="w-100" [(ngModel)]="city_id">
+                <option value="0" disabled>Select City</option>
+                <option *ngFor="let item of all_cities" [value]="item.city_id">{{item.city}}</option>
+
+            </select>
+        </div>
+    </div>
+    <div>
+        <h5>Address<sup>*</sup></h5>
+        <div>
+            <textarea type="textarea" [(ngModel)]="address" rows="7" cols="75"> 
+           </textarea>
+        </div>
+    </div>
+    <div>
+        <h5>Mobile No <sup>*</sup></h5>
+        <div class="form-feild">
+            <input type="text" [(ngModel)]="mobile_no" />
+        </div>
+    </div>
+
+    <button style="margin-top: 70px;margin-left: 171px;color:white" class="leave-frm-btn"
+    (click)="Updateclientdetails()">Update</button>
+</div>
+
+
+
+
+<!-- end edit pupop -->

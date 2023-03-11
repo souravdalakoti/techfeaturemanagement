@@ -18,7 +18,8 @@ export class LeftComponent{
   /*Projects-->*/ {name:'Projects',path:"",SideBarMenu:5},{name:'Task',path:"",SideBarMenu:5},
   /*Sales-->*/{name:'Payments',path:"",SideBarMenu:6},
   /*TF coaching--->*/{name:'TFCoachingTrainee',path:"/TFCoachingclass",SideBarMenu:16},
-  /*TF coaching--->*/{name:'TFEmployee',path:"./TFEmployee",SideBarMenu:17}
+  /*TF coaching--->*/{name:'TFEmployee',path:"./TFEmployee",SideBarMenu:17},
+   /*TFM Client--->*/{name:'Client',path:"./client",SideBarMenu:5}
  
  
 ];
@@ -38,7 +39,7 @@ export class LeftComponent{
     {name:"Apps",HeaderId:1,SideBarMenu:2,IsSubmenu:true},
     {name:"Invoice",HeaderId:1,SideBarMenu:3,IsSubmenu:true},
     {name:"Employees",HeaderId:2,SideBarMenu:4,IsSubmenu:true},
-    {name:"Clients",HeaderId:2,SideBarMenu:5,IsSubmenu:false},
+    {name:"Clients",HeaderId:2,SideBarMenu:5,IsSubmenu:true},
     {name:"Projects",HeaderId:2,SideBarMenu:6,IsSubmenu:true},
     {name:"Leads",HeaderId:2,SideBarMenu:7,IsSubmenu:false},
     {name:"Tickets",HeaderId:2,SideBarMenu:8,IsSubmenu:false},

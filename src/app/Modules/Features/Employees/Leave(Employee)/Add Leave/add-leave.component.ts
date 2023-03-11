@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";  
 import { Router } from "@angular/router";
+import { status } from "src/app/Enum/status";
 import { EmployeeService } from "src/app/Modules/shared/services/employee.service";
 
 
@@ -29,7 +30,7 @@ import { EmployeeService } from "src/app/Modules/shared/services/employee.servic
         included:any;
         emp_id:any;
         reason:any='';
-        
+        status_id:number=status.New;
         @Input() view:boolean=true;
         @Output() hide=new EventEmitter();
             constructor(private service:EmployeeService,private route:Router){
@@ -108,8 +109,8 @@ import { EmployeeService } from "src/app/Modules/shared/services/employee.servic
             
             Submitt()
             {
-                
-                var date1 = (new Date(this.date_from.month + '/' + this.date_from.day + '/' + this.date_from.year)).toLocaleString();
+                debugger;
+                var date1 = (new Date(this.date_from.day + '/' + this.date_from.month + '/' + this.date_from.year)).toLocaleString();
                 var date2 = null; 
                 
                 if(this.days_duration_type==1)
@@ -135,9 +136,10 @@ import { EmployeeService } from "src/app/Modules/shared/services/employee.servic
                     second_half:this.secondhalf,
                     days_duration:this.number_of_days,
                     reason:this.reason,
+                    status_id:this.status_id
                 };
                 this.service.SaveEmployeeLeave(data).subscribe((result)=>{
-        
+                    debugger;
                     if(result==0)
                     {
                         alert("Oops Didn't Got It")

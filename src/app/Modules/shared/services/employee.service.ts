@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { HttpService } from './http.service';
-
-
 
 @Injectable()
 
@@ -72,6 +68,7 @@ getleavetype(){
 }
 SaveEmployeeLeave(data:any)
 {
+  debugger;
   return this.api.post(this.apiController+"/SaveEmployeeLeave",data);
 }
 GetemployeeLeaveRecord(data:any){

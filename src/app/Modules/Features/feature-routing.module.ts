@@ -27,6 +27,7 @@ const routes: Routes = [
       
       { path: 'message-admin',loadChildren: () => import('./Employees/Messages/Admin/message-admin.module').then(module=>module.MessageAdminModule),data: { title: 'Admin-Message' } },
       { path: 'message-employee',loadChildren: () => import('./Employees/Messages/Employee/message-employee.module').then(module=>module.MessageEmployeeModule),data: { title: 'Employee-Message' } },
+      { path:'client',loadChildren:()=> import('./client/client.module').then(module=>module.ClientModule),data:{title:'Client'}}
     ]
 },
 
